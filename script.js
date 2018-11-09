@@ -59,6 +59,15 @@ function countUpEffLP( targetID, startVal, EndVal, delay, duration, durationMult
                     $( "#innerFoot" ).addClass( 'fillFooter' );
                     $( "#mainNav" ).addClass( 'fillNav' );
 
+                    setTimeout( function() {
+
+                        $( ".appearNav" ).each( function() {
+
+                            $( this ).removeClass( 'appearNav' );
+                            $( this ).addClass( 'appearNavAnim' );
+                        }); 
+                        $( "#mainNavButton" ).addClass( 'appearNavAnim' );
+                    }, 1500);
 
 
                 }, 1000);
