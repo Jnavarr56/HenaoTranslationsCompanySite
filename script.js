@@ -52,7 +52,11 @@ $( document ).ready( function() {
             let dropdownIsShowing = $( '#navbar1').attr( 'class' ).split(' ').includes( 'show' );
             if ( dropdownIsShowing ) {
 
-                $( '#mainNavButton' ).click();
+                setTimeout( function() {
+
+                    $( '#mainNavButton' ).click();
+                }, 250);
+                
             }
          });
     });

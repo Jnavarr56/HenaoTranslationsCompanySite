@@ -285,8 +285,8 @@ footer {
 nav ul li a,
 nav ul li a:after,
 nav ul li a:before {
-  -webkit-transition: ease-in-out all .5s;
-  transition: ease-in-out all .5s; }
+  -webkit-transition: ease-in-out all .25s;
+  transition: ease-in-out all .25s; }
 
 nav ul li a:hover {
   color: #555; }
