@@ -309,4 +309,16 @@ nav.stroke ul li a:after {
 nav.stroke ul li a:hover:after {
   width: 100%; }
 
+.noneHome {
+  position: relative;
+  height: 78%; }
+
+.contentSection {
+  display: none; }
+
+.currentlySelected {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
 /*# sourceMappingURL=styles.css.map */

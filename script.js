@@ -1,9 +1,63 @@
 
 $( document ).ready( function() {
 
+    var currentlySelected = $( '.currentlySelected').eq( 0 );
+    console.log( currentlySelected );
+    $( '.sectionSelector' ).each( function() {
+        
+         $( this ).click( function() {
+            
+            let mappedSectionID = '#c' + $( this ).attr( 'id' ).slice(1);
+            
+            if ( $( mappedSectionID ).length ) {
 
+                let isCurrentlySelected = $( mappedSectionID ).attr( 'class' ).split(' ').includes( 'currentlySelected' );
+
+                let contentIndex = $( '.contentSection' ).index( $( mappedSectionID ) );
+
+                if ( !isCurrentlySelected ) {
+
+
+                    let oldSelectedIndex = $( '.contentSection' ).index( currentlySelected );
+                    let newSelectedIndex = $( '.contentSection' ).index( $( mappedSectionID ) );
+                    
+
+                    if ( oldSelectedIndex > newSelectedIndex ) {
+
+                        console.log( 'New comes in from left' );
+                        console.log( 'Old leaves from right' );
+
+                    }
+
+                    else {
+
+                        console.log( 'New comes in from right' );
+                        console.log( 'Old leaves from left' );
+                    }
+
+
+                    currentlySelected.removeClass( 'currentlySelected' );
+                    $( mappedSectionID ).addClass( 'currentlySelected' );
+                    
+
+
+                    currentlySelected = $( '.currentlySelected' ).eq( 0 );
+                }
+
+            }
+            
+
+            
+
+            let dropdownIsShowing = $( '#navbar1').attr( 'class' ).split(' ').includes( 'show' );
+            if ( dropdownIsShowing ) {
+
+                $( '#mainNavButton' ).click();
+            }
+         });
+    });
     
-    //On load roll in effects.
+    //On load effects.
     countUpEffLP( '#years-experience', 0, 20, 500, 3000, 1.35 );
 
     
@@ -13,10 +67,20 @@ $( document ).ready( function() {
 } );
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 //Primary count up effect.
 function countUpEffLP( targetID, startVal, EndVal, delay, duration, durationMultiplier ) {
-
-    console.log( 'CUE COUNT UP EFFECT' );
 
     $( '#landing-text-primary' ).addClass( 'BlurIn' );
 
@@ -89,8 +153,5 @@ function countUpEffLP( targetID, startVal, EndVal, delay, duration, durationMult
 
     }, ( delay ) );
 
-    
-    console.log( 'EXECUTING COUNT UP EFFECT' );
-    console.log( '----');
 }
 

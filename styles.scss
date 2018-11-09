@@ -249,16 +249,16 @@ footer {
 nav ul li a,
 nav ul li a:after,
 nav ul li a:before {
-transition: ease-in-out all .5s;
+    transition: ease-in-out all .5s;
 }
 nav ul li a:hover {
-color: #555;
+    color: #555;
 }
 
-  nav.stroke ul li a {
+nav.stroke ul li a {
     position: relative;
-  }
-  nav.stroke ul li a:after {
+}
+nav.stroke ul li a:after {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -269,8 +269,20 @@ color: #555;
     color: transparent;
     background: rgba(0, 0, 0, 1);
     height: 2px;
-  }
-  nav.stroke ul li a:hover:after {
+}
+    nav.stroke ul li a:hover:after {
     width: 100%;
-  }
-  
+}
+.noneHome {
+    position: relative;
+    height: 78%;
+}
+.contentSection {
+
+    display: none;
+}
+
+.currentlySelected {
+
+    display: flex;
+}
