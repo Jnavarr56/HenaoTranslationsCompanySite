@@ -243,13 +243,13 @@ footer {
 
 .navbar-toggler:not(.collapsed) .icon-bar:nth-child(3) {
     transform: rotate(-45deg) translate(4px, -4px);
-    transition: ease-in-out all .25s;
+    transition: ease all .2s;
   }
   
 nav ul li a,
 nav ul li a:after,
 nav ul li a:before {
-transition: all .5s;
+transition: ease-in-out all .5s;
 }
 nav ul li a:hover {
 color: #555;
