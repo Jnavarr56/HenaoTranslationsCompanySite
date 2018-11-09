@@ -1,11 +1,11 @@
 
 $( document ).ready( function() {
 
-    //Primary count up effect.
-    countUpEffLP( '#years-experience', 0, 20, 500, 3000, 1.50 );
+    //On load roll in effects.
+    countUpEffLP( '#years-experience', 0, 20, 500, 3000, 1.35 );
 
-    //Make list items appear.
-    liAppearEffLP( 'home-list-item', 3000, 500, 'listItemAppear', '#landing-text-primary' );
+    
+    
 
 
 } );
@@ -15,6 +15,8 @@ $( document ).ready( function() {
 function countUpEffLP( targetID, startVal, EndVal, delay, duration, durationMultiplier ) {
 
     console.log( 'CUE COUNT UP EFFECT' );
+
+    $( '#landing-text-primary' ).addClass( 'BlurIn' );
 
     setTimeout( function() {
 
@@ -38,57 +40,28 @@ function countUpEffLP( targetID, startVal, EndVal, delay, duration, durationMult
             if ( newVal === EndVal ) {
 
                 clearInterval( countUp );
+
+                setTimeout( function() {
+                    $( '#landing-text-primary' ).removeClass( 'BlurIn');
+                    $( '#landing-text-primary' ).addClass( 'flashSwitch1');
+                    setTimeout( function() {
+                        $( '#landing-text-primary' ).html( 'Gladys Henao, M.A. Legal Translator' );
+                        setTimeout( function() {
+                            $( '#landing-text-primary' ).addClass( 'flashSwitch2');
+                        }, 750);
+                    }, 750);
+
+                    $( "#innerFoot" ).addClass( 'fillFooter' );
+                }, 1250);
+                
             }
 
         }, ( duration / ( EndVal * durationMultiplier ) ) );
 
     }, ( delay ) );
 
+    
     console.log( 'EXECUTING COUNT UP EFFECT' );
     console.log( '----');
 }
 
-//Make list items appear.
-function liAppearEffLP( targetID, intialDelay, interDelay, effectClassListAppear, targetID2 ) {
-
-    console.log( 'CUE LIST APPEAR EFFECT' );
-
-    var listItems = $( '.home-list-item' ), liIndex = 0;
-
-    
-    setTimeout( function() {
-        
-        let appearLi = setInterval( function() {
-
-            jQuery( listItems[liIndex] ).addClass( effectClassListAppear );
-
-            liIndex ++;
-
-            if ( liIndex === listItems.length ) {
-
-
-
-                clearInterval( appearLi );
-
-                setTimeout( function() {
-                    
-
-                    $( targetID2 ).addClass( 'fadeOutInHomeQuick' );
-                    $( targetID2 ).html( 'Gladys Henao, M.A. Legal Translator' );
-
-                    
-
-                }, 750);
-            }
-        }, interDelay + 250 );
-        
-
-    }, intialDelay );
-
-
-
-
-    console.log( 'EXECUTING LIST APPEAR EFFECT' );
-    console.log( '----');
-
-}

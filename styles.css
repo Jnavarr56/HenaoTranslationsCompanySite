@@ -15,8 +15,8 @@ body {
 
 .landing-main {
   position: relative;
-  top: 35%;
-  height: 40%;
+  top: 32.5%;
+  height: 30%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -25,26 +25,36 @@ body {
     margin: 0% 0%; }
     .landing-main .row:nth-child(1) {
       height: 50%; }
-    .landing-main .row:nth-child(2) {
-      height: 20%;
-      margin: 10% 0%; }
     .landing-main .row div {
       height: 100%;
       width: 100%;
       display: flex;
       justify-content: center;
       align-items: center; }
-      .landing-main .row div .fadeOutInHomeQuick {
-        animation: FadeOutInHomeQuick 1s 0s linear 1 normal; }
-@keyframes FadeOutInHomeQuick {
-  50% {
-    opacity: 0; }
+      .landing-main .row div .flashSwitch1 {
+        animation: FadeOutInHomeQuick1 .75s 0s ease-in-out 1 forwards; }
+@keyframes FadeOutInHomeQuick1 {
+  0% {
+    opacity: 1;
+    filter: blur(0px); }
   100% {
-    opacity: 1; } }
+    opacity: 0;
+    filter: blur(10px); } }
+      .landing-main .row div .flashSwitch2 {
+        font-size: 300%;
+        animation: FadeOutInHomeQuick2 .75s 0s ease-in-out 1 forwards; }
+@keyframes FadeOutInHomeQuick2 {
+  0% {
+    opacity: 0;
+    filter: blur(10px); }
+  100% {
+    opacity: 1;
+    filter: blur(0px); } }
       .landing-main .row div #landing-text-primary {
         position: relative;
         margin: 0;
-        padding: 0;
+        padding: 0; }
+      .landing-main .row div .BlurIn {
         animation: BlurInPrimaryLandingText 3s 0s linear 1 forwards; }
 @keyframes BlurInPrimaryLandingText {
   0% {
@@ -61,5 +71,28 @@ body {
 @keyframes ListItemAppear {
   100% {
     opacity: 1; } }
+footer {
+  position: absolute;
+  bottom: 0;
+  height: 7.5%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center; }
+  footer div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 0%;
+    border-top-style: solid;
+    overflow: hidden; }
+    footer div p {
+      white-space: nowrap;
+      font-size: 50%; }
+  footer .fillFooter {
+    animation: FillFoot 1.75s 0s ease-in-out 1 forwards; }
+@keyframes FillFoot {
+  100% {
+    width: 100%; } }
 
 /*# sourceMappingURL=styles.css.map */

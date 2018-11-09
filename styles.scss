@@ -29,9 +29,9 @@ body {
 
 .landing-main {
     position: relative;
-    top: 35%;
+    top: 32.5%;
 
-    height: 40%;
+    height: 30%;
     
     display: flex;
     flex-direction: column;
@@ -45,12 +45,6 @@ body {
             height: 50%;
         }
         
-        &:nth-child(2) {
-            height: 20%;
-
-            margin: 10% 0%;
-        } 
-
         div {
 
             height: 100%;
@@ -60,16 +54,28 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
-            
-            .fadeOutInHomeQuick {
 
-                animation: FadeOutInHomeQuick 1s 0s linear 1 normal;
+            .flashSwitch1 {
+
+                animation: FadeOutInHomeQuick1 .75s 0s ease-in-out 1 forwards;
+            }
+            @keyframes FadeOutInHomeQuick1 {
+                0% { opacity: 1; filter: blur(0px); }
+                100% { opacity: 0; filter: blur(10px); }
+            }
+            .flashSwitch2 {
+
+                font-size: 300%;
+
+
+                animation: FadeOutInHomeQuick2 .75s 0s ease-in-out 1 forwards;
+            }
+            @keyframes FadeOutInHomeQuick2 {
+                0% { opacity: 0; filter: blur(10px); }
+                100% { opacity: 1; filter: blur(0px); }
             }
             
-            @keyframes FadeOutInHomeQuick {
-                50% { opacity: 0; }
-                100% { opacity: 1; }
-            }
+
 
             #landing-text-primary {
                 //font-size: 2rem;
@@ -78,6 +84,10 @@ body {
                 
                 margin: 0;
                 padding: 0;
+
+                
+            }
+            .BlurIn {
 
                 animation: BlurInPrimaryLandingText $blurry-primary-text-animation-duration 0s linear 1 forwards;
             }
@@ -104,4 +114,46 @@ body {
     }
 }
 
+
+footer {
+    position: absolute;
+    bottom: 0;
+
+    height: 7.5%;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    div {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        height: 100%;
+        width: 0%;
+
+        border-top-style: solid;
+
+        overflow: hidden;
+
+        p {
+
+            white-space: nowrap;
+
+            font-size: 50%;
+        }
+    }
+
+    .fillFooter {
+
+
+        animation: FillFoot 1.75s 0s ease-in-out 1 forwards;
+
+    }
+    @keyframes FillFoot {
+        100% { width: 100%; }
+    }
+}
 
