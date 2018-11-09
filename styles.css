@@ -168,9 +168,9 @@ footer {
   100% {
     width: 100%; } }
 #navHolder {
-  height: 78px; }
+  height: 73.6719px; }
   #navHolder #mainNav {
-    height: 78px;
+    height: 73.6719px;
     padding: 0;
     width: 0%;
     overflow: hidden;
@@ -205,8 +205,8 @@ footer {
     width: 100%;
     padding: 15px; } }
   #navHolder #brandIcon {
-    height: 35px;
-    width: 35px; }
+    height: 27.5px;
+    width: 27.5px; }
   #navHolder .appearNav {
     display: none; }
   #navHolder div {
@@ -223,5 +223,63 @@ footer {
     opacity: 1; } }
   #navHolder button {
     opacity: 0; }
+  #navHolder button:focus {
+    outline: none; }
+
+.navbar-toggler {
+  border: none;
+  background: transparent !important; }
+
+.navbar-toggler:focus {
+  outline: none;
+  background: transparent !important; }
+
+.navbar-toggler .icon-bar {
+  background-color: black;
+  -webkit-transform: rotate(0deg) translate(0px, 0px);
+          transform: rotate(0deg) translate(0px, 0px);
+  -webkit-transition: ease all .2s;
+  transition: ease all .2s; }
+
+.navbar-toggler .icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px; }
+
+.navbar-toggler .icon-bar + .icon-bar {
+  margin-top: 4px; }
+
+.icon-bar:nth-child(2) {
+  width: 16px;
+  -webkit-transition: ease all .2s;
+  transition: ease all .2s; }
+
+.navbar-toggler:hover > .icon-bar:nth-child(2) {
+  width: 22px;
+  -webkit-transition: ease all .2s;
+  transition: ease all .2s; }
+
+.navbar-toggler:active > .icon-bar:nth-child(2) {
+  width: 22px;
+  -webkit-transition: ease all .2s;
+  transition: ease all .2s; }
+
+.navbar-toggler:not(.collapsed) .icon-bar:nth-child(1) {
+  -webkit-transform: rotate(45deg) translate(5px, 4px);
+          transform: rotate(45deg) translate(5px, 4px);
+  -webkit-transition: ease all .2s;
+  transition: ease all .2s; }
+
+.navbar-toggler:not(.collapsed) .icon-bar:nth-child(2) {
+  opacity: 0;
+  -webkit-transition: ease all .2s;
+  transition: ease all .2s; }
+
+.navbar-toggler:not(.collapsed) .icon-bar:nth-child(3) {
+  -webkit-transform: rotate(-45deg) translate(4px, -4px);
+          transform: rotate(-45deg) translate(4px, -4px);
+  -webkit-transition: ease all .2s;
+  transition: ease all .2s; }
 
 /*# sourceMappingURL=styles.css.map */
