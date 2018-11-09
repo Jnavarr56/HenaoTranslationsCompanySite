@@ -4,6 +4,10 @@
 $primary-font: 'Poppins', Arial, Helvetica, sans-serif;
 $secondary-font: 'Raleway', Arial, Helvetica, sans-serif;
 
+$blurry-primary-text-animation-duration: 3s;
+
+$list-appear-animation-duration: .5s;
+
 html {
     overflow: hidden;
 }
@@ -18,34 +22,86 @@ body {
 .landing-text {
     color: rgba(0, 0, 0, 1);
     font-family: $primary-font;
-}
-#landing-text-primary {
-    font-size: 2rem;
 
-    margin: 0 0% 0 10%;
-    padding: 0;
+    opacity: 0;
+}
 
-    width: 50%;
 
-    animation: BlurInPrimaryLandingText 3s 0s ease-in-out 1 forwards;
-}
-.write-primary-effect {
-    //animation: TypePrimaryLandingText 3s 0s steps(70) 1 forwards;
-}
-@keyframes BlurInPrimaryLandingText {
-    0% { opacity: 0; filter: blur(5px); }
-    100% { opacity: 1; filter: blur(0px); }
-}
 .landing-main {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-
-    padding: 0;
-    margin: 0 auto;
-
     position: relative;
-    top: 30%;
-    right: 0%;
+    top: 35%;
+
+    height: 40%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-evenly;
+    
+    .row {
+        margin: 0% 0%;
+
+        &:nth-child(1) {
+            height: 50%;
+        }
+        
+        &:nth-child(2) {
+            height: 20%;
+
+            margin: 10% 0%;
+        } 
+
+        div {
+
+            height: 100%;
+            width: 100%;
+
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            .fadeOutInHomeQuick {
+
+                animation: FadeOutInHomeQuick 1s 0s linear 1 normal;
+            }
+            
+            @keyframes FadeOutInHomeQuick {
+                50% { opacity: 0; }
+                100% { opacity: 1; }
+            }
+
+            #landing-text-primary {
+                //font-size: 2rem;
+            
+                position: relative;
+                
+                margin: 0;
+                padding: 0;
+
+                animation: BlurInPrimaryLandingText $blurry-primary-text-animation-duration 0s linear 1 forwards;
+            }
+            @keyframes BlurInPrimaryLandingText {
+                0% { opacity: 0; filter: blur(10px); }
+                100% { opacity: 1; filter: blur(0px); }
+            }
+
+            .home-list-item {
+                padding: 0;
+                margin: 0%;
+            }
+
+            .listItemAppear {
+                
+                animation: ListItemAppear .5s 0s ease 1 forwards;
+            }
+            @keyframes ListItemAppear {
+                100% { opacity: 1; }
+            }
+
+
+        }
+    }
 }
+
 
