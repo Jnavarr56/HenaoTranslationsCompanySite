@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins|Raleway:800');
+
+
+$primary-font: 'Poppins', Arial, Helvetica, sans-serif;
+$secondary-font: 'Raleway', Arial, Helvetica, sans-serif;
+
+html {
+    overflow: hidden;
+}
+body {
+    background-color: rgba(255, 255, 255, 1);
+
+    height: 100vh;
+    width: 100vw;
+
+    margin: 0 auto;
+}
+.landing-text {
+    color: rgba(0, 0, 0, 1);
+    font-family: $primary-font;
+}
+#landing-text-primary {
+    font-size: 2rem;
+
+    margin: 0 0% 0 10%;
+    padding: 0;
+
+    width: 50%;
+
+    animation: BlurInPrimaryLandingText 3s 0s ease-in-out 1 forwards;
+}
+.write-primary-effect {
+    //animation: TypePrimaryLandingText 3s 0s steps(70) 1 forwards;
+}
+@keyframes BlurInPrimaryLandingText {
+    0% { opacity: 0; filter: blur(5px); }
+    100% { opacity: 1; filter: blur(0px); }
+}
+.landing-main {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    padding: 0;
+    margin: 0 auto;
+
+    position: relative;
+    top: 30%;
+    right: 0%;
+}
+
