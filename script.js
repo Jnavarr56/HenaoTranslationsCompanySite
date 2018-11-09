@@ -1,6 +1,11 @@
 
 $( document ).ready( function() {
 
+
+      
+
+
+
     //On load roll in effects.
     countUpEffLP( '#years-experience', 0, 20, 500, 3000, 1.35 );
 
@@ -49,10 +54,14 @@ function countUpEffLP( targetID, startVal, EndVal, delay, duration, durationMult
                         setTimeout( function() {
                             $( '#landing-text-primary' ).addClass( 'flashSwitch2');
                         }, 750);
-                    }, 750);
+                    }, 250);
 
                     $( "#innerFoot" ).addClass( 'fillFooter' );
-                }, 1250);
+                    $( "#mainNav" ).addClass( 'fillNav' );
+
+
+
+                }, 1000);
                 
             }
 

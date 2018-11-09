@@ -15,7 +15,7 @@ body {
 
 .landing-main {
   position: relative;
-  top: 32.5%;
+  top: 25%;
   height: 30%;
   display: flex;
   flex-direction: column;
@@ -32,7 +32,7 @@ body {
       justify-content: center;
       align-items: center; }
       .landing-main .row div .flashSwitch1 {
-        animation: FadeOutInHomeQuick1 .75s 0s ease-in-out 1 forwards; }
+        animation: FadeOutInHomeQuick1 .25s 0s ease-in-out 1 forwards; }
 @keyframes FadeOutInHomeQuick1 {
   0% {
     opacity: 1;
@@ -72,9 +72,10 @@ body {
   100% {
     opacity: 1; } }
 footer {
+  margin: 0;
   position: absolute;
   bottom: 0;
-  height: 7.5%;
+  height: 10%;
   display: flex;
   justify-content: flex-end;
   align-items: center; }
@@ -90,9 +91,39 @@ footer {
       white-space: nowrap;
       font-size: 50%; }
   footer .fillFooter {
-    animation: FillFoot 1.75s 0s ease-in-out 1 forwards; }
+    background-color: white;
+    animation: FillFoot 1.50s 0s ease-in-out 1 forwards; }
 @keyframes FillFoot {
   100% {
     width: 100%; } }
+#mainNav {
+  padding: 0;
+  width: 0%;
+  overflow: hidden;
+  white-space: nowrap;
+  border-style: none none solid none; }
+  #mainNav ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center; }
+  #mainNav li {
+    color: black;
+    font-family: "Poppins", Arial, Helvetica, sans-serif; }
+    #mainNav li a {
+      color: black;
+      font-family: "Poppins", Arial, Helvetica, sans-serif; }
+
+.fillNav {
+  animation: FillNav 1.50s 0s ease-in-out 1 forwards; }
+
+@keyframes FillNav {
+  100% {
+    width: 100%;
+    padding: 15px; } }
+#brandIcon {
+  height: 60px;
+  width: 60px;
+  padding: 10px; }
 
 /*# sourceMappingURL=styles.css.map */
