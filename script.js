@@ -2,7 +2,7 @@
 $( document ).ready( function() {
 
     var currentlySelected = $( '.currentlySelected').eq( 0 );
-    console.log( currentlySelected );
+    
     $( '.sectionSelector' ).each( function() {
         
          $( this ).click( function() {
@@ -20,28 +20,49 @@ $( document ).ready( function() {
 
                     let oldSelectedIndex = $( '.contentSection' ).index( currentlySelected );
                     let newSelectedIndex = $( '.contentSection' ).index( $( mappedSectionID ) );
+
+
                     
 
-                    if ( oldSelectedIndex > newSelectedIndex ) {
+                    $( mappedSectionID ).addClass( 'currentlySelected' );
+                    $( mappedSectionID ).removeClass( 'flyInRight' );
+                    $( mappedSectionID ).removeClass( 'flyInLeft' );
 
-                        console.log( 'New comes in from left' );
-                        console.log( 'Old leaves from right' );
 
+                    if ( newSelectedIndex < oldSelectedIndex ) {
+                        console.log( 'NEW: IN LEFT, OLD: OUT RIGHT' );
+
+
+                        
+                        currentlySelected.addClass( 'flyOutRight' );
+                        $( mappedSectionID ).addClass( 'flyInLeft' );                        
                     }
 
                     else {
+                        console.log( 'NEW: IN RIGHT, OLD: OUT LEFT' );
 
-                        console.log( 'New comes in from right' );
-                        console.log( 'Old leaves from left' );
+                        currentlySelected.addClass( 'flyOutLeft' );
+                        $( mappedSectionID ).addClass( 'flyInRight' );
                     }
+                    
+                    setTimeout( function() {
+
+                        currentlySelected.removeClass( 'flyOutLeft' );
+                        currentlySelected.removeClass( 'flyOutRight' );
 
 
-                    currentlySelected.removeClass( 'currentlySelected' );
-                    $( mappedSectionID ).addClass( 'currentlySelected' );
+                        $( mappedSectionID ).removeClass( 'flyInRight' );
+                        $( mappedSectionID ).removeClass( 'flyInLeft' );
+
+                        currentlySelected.removeClass( 'currentlySelected' ); 
+                        currentlySelected = $( '.currentlySelected' ).eq( 0 ); 
+                    }, 1500);
+
+
                     
 
 
-                    currentlySelected = $( '.currentlySelected' ).eq( 0 );
+                    
                 }
 
             }

@@ -286,3 +286,57 @@ nav.stroke ul li a:after {
 
     display: flex;
 }
+
+.flyInLeft {
+    position: absolute;
+    animation: FlyInLeft 1.50s 0s ease 1 forwards;
+}
+@keyframes FlyInLeft {
+
+    0% {  opacity: 0; filter: blur(10px); left: -100%; transform: scale(1, 1); }
+    50% { filter: blur(10px); left: -30%; transform: scale(0.25, 0.25); }
+    75% { filter: blur(10px); left: -5%; transform: scale(0.25, 0.25);  }
+    100% { left: 0%;  }
+    
+}
+
+.flyOutLeft {
+    position: absolute;
+    animation: FlyOutLeft 1.50s 0s ease 1 forwards;
+}
+@keyframes FlyOutLeft {
+
+    0% {  opacity: 0; filter: blur(0px); left: 0%; transform: scale(1, 1); }
+    50% { filter: blur(10px); left: 5%; transform: scale(0.25, 0.25);  }
+    75% { left: 30%; transform: scale(0.25, 0.25);  }
+    100% { left: 100%; transform: scale(1, 1);  }
+    
+}
+
+
+
+.flyInRight {
+    position: absolute;
+    animation: FlyInRight 1.50s 0s ease 1 forwards;
+}
+@keyframes FlyInRight {
+
+    0% {  opacity: 0; filter: blur(10px); left: 100%; transform: scale(1, 1); }
+    50% { filter: blur(10px); left: 30%; transform: scale(0.25, 0.25);   }
+    75% { filter: blur(10px); left: 5%; transform: scale(0.25, 0.25);    }
+    100% { left: 0%; }
+    
+}
+
+.flyOutRight {
+    position: absolute;
+    animation: FlyOutRight 1.50s 0s ease 1 forwards;
+}
+@keyframes FlyOutRight {
+
+    0% {  opacity: 0; filter: blur(0px); left: 0%; transform: scale(1, 1); }
+    50% { filter: blur(10px); left: 5%; transform: scale(0.25, 0.25);  }
+    75% { left: 30%; transform: scale(0.25, 0.25);  }
+    100% { left: 100%; transform: scale(1, 1);  }
+    
+}

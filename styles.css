@@ -321,4 +321,205 @@ nav.stroke ul li a:hover:after {
   display: -ms-flexbox;
   display: flex; }
 
+.flyInLeft {
+  position: absolute;
+  -webkit-animation: FlyInLeft 1.50s 0s ease 1 forwards;
+          animation: FlyInLeft 1.50s 0s ease 1 forwards; }
+
+@-webkit-keyframes FlyInLeft {
+  0% {
+    opacity: 0;
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    left: -100%;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); }
+  50% {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    left: -30%;
+    -webkit-transform: scale(0.25, 0.25);
+            transform: scale(0.25, 0.25); }
+  75% {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    left: -5%;
+    -webkit-transform: scale(0.25, 0.25);
+            transform: scale(0.25, 0.25); }
+  100% {
+    left: 0%; } }
+
+@keyframes FlyInLeft {
+  0% {
+    opacity: 0;
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    left: -100%;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); }
+  50% {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    left: -30%;
+    -webkit-transform: scale(0.25, 0.25);
+            transform: scale(0.25, 0.25); }
+  75% {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    left: -5%;
+    -webkit-transform: scale(0.25, 0.25);
+            transform: scale(0.25, 0.25); }
+  100% {
+    left: 0%; } }
+.flyOutLeft {
+  position: absolute;
+  -webkit-animation: FlyOutLeft 1.50s 0s ease 1 forwards;
+          animation: FlyOutLeft 1.50s 0s ease 1 forwards; }
+
+@-webkit-keyframes FlyOutLeft {
+  0% {
+    opacity: 0;
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    left: 0%;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); }
+  50% {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    left: 5%;
+    -webkit-transform: scale(0.25, 0.25);
+            transform: scale(0.25, 0.25); }
+  75% {
+    left: 30%;
+    -webkit-transform: scale(0.25, 0.25);
+            transform: scale(0.25, 0.25); }
+  100% {
+    left: 100%;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); } }
+
+@keyframes FlyOutLeft {
+  0% {
+    opacity: 0;
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    left: 0%;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); }
+  50% {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    left: 5%;
+    -webkit-transform: scale(0.25, 0.25);
+            transform: scale(0.25, 0.25); }
+  75% {
+    left: 30%;
+    -webkit-transform: scale(0.25, 0.25);
+            transform: scale(0.25, 0.25); }
+  100% {
+    left: 100%;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); } }
+.flyInRight {
+  position: absolute;
+  -webkit-animation: FlyInRight 1.50s 0s ease 1 forwards;
+          animation: FlyInRight 1.50s 0s ease 1 forwards; }
+
+@-webkit-keyframes FlyInRight {
+  0% {
+    opacity: 0;
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    left: 100%;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); }
+  50% {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    left: 30%;
+    -webkit-transform: scale(0.25, 0.25);
+            transform: scale(0.25, 0.25); }
+  75% {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    left: 5%;
+    -webkit-transform: scale(0.25, 0.25);
+            transform: scale(0.25, 0.25); }
+  100% {
+    left: 0%; } }
+
+@keyframes FlyInRight {
+  0% {
+    opacity: 0;
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    left: 100%;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); }
+  50% {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    left: 30%;
+    -webkit-transform: scale(0.25, 0.25);
+            transform: scale(0.25, 0.25); }
+  75% {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    left: 5%;
+    -webkit-transform: scale(0.25, 0.25);
+            transform: scale(0.25, 0.25); }
+  100% {
+    left: 0%; } }
+.flyOutRight {
+  position: absolute;
+  -webkit-animation: FlyOutRight 1.50s 0s ease 1 forwards;
+          animation: FlyOutRight 1.50s 0s ease 1 forwards; }
+
+@-webkit-keyframes FlyOutRight {
+  0% {
+    opacity: 0;
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    left: 0%;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); }
+  50% {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    left: 5%;
+    -webkit-transform: scale(0.25, 0.25);
+            transform: scale(0.25, 0.25); }
+  75% {
+    left: 30%;
+    -webkit-transform: scale(0.25, 0.25);
+            transform: scale(0.25, 0.25); }
+  100% {
+    left: 100%;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); } }
+
+@keyframes FlyOutRight {
+  0% {
+    opacity: 0;
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    left: 0%;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); }
+  50% {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    left: 5%;
+    -webkit-transform: scale(0.25, 0.25);
+            transform: scale(0.25, 0.25); }
+  75% {
+    left: 30%;
+    -webkit-transform: scale(0.25, 0.25);
+            transform: scale(0.25, 0.25); }
+  100% {
+    left: 100%;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); } }
+
 /*# sourceMappingURL=styles.css.map */
