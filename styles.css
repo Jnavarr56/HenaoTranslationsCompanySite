@@ -279,7 +279,34 @@ footer {
 .navbar-toggler:not(.collapsed) .icon-bar:nth-child(3) {
   -webkit-transform: rotate(-45deg) translate(4px, -4px);
           transform: rotate(-45deg) translate(4px, -4px);
-  -webkit-transition: ease all .2s;
-  transition: ease all .2s; }
+  -webkit-transition: ease-in-out all .25s;
+  transition: ease-in-out all .25s; }
+
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+  -webkit-transition: all .5s;
+  transition: all .5s; }
+
+nav ul li a:hover {
+  color: #555; }
+
+nav.stroke ul li a {
+  position: relative; }
+
+nav.stroke ul li a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: black;
+  height: 2px; }
+
+nav.stroke ul li a:hover:after {
+  width: 100%; }
 
 /*# sourceMappingURL=styles.css.map */
