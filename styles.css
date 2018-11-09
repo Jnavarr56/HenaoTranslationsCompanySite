@@ -168,7 +168,8 @@ footer {
   100% {
     width: 100%; } }
 #navHolder {
-  height: 73.6719px; }
+  height: 73.6719px;
+  background-color: white; }
   #navHolder #mainNav {
     height: 73.6719px;
     padding: 0;
@@ -387,15 +388,15 @@ nav.stroke ul li a:hover:after {
   50% {
     -webkit-filter: blur(10px);
             filter: blur(10px);
-    left: 5%;
+    left: -5%;
     -webkit-transform: scale(0.25, 0.25);
             transform: scale(0.25, 0.25); }
   75% {
-    left: 30%;
+    left: -30%;
     -webkit-transform: scale(0.25, 0.25);
             transform: scale(0.25, 0.25); }
   100% {
-    left: 100%;
+    left: -100%;
     -webkit-transform: scale(1, 1);
             transform: scale(1, 1); } }
 
@@ -410,15 +411,15 @@ nav.stroke ul li a:hover:after {
   50% {
     -webkit-filter: blur(10px);
             filter: blur(10px);
-    left: 5%;
+    left: -5%;
     -webkit-transform: scale(0.25, 0.25);
             transform: scale(0.25, 0.25); }
   75% {
-    left: 30%;
+    left: -30%;
     -webkit-transform: scale(0.25, 0.25);
             transform: scale(0.25, 0.25); }
   100% {
-    left: 100%;
+    left: -100%;
     -webkit-transform: scale(1, 1);
             transform: scale(1, 1); } }
 .flyInRight {

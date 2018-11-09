@@ -1,86 +1,8 @@
 
 $( document ).ready( function() {
 
-    var currentlySelected = $( '.currentlySelected').eq( 0 );
-    
-    $( '.sectionSelector' ).each( function() {
-        
-         $( this ).click( function() {
-            
-            let mappedSectionID = '#c' + $( this ).attr( 'id' ).slice(1);
-            
-            if ( $( mappedSectionID ).length ) {
-
-                let isCurrentlySelected = $( mappedSectionID ).attr( 'class' ).split(' ').includes( 'currentlySelected' );
-
-                let contentIndex = $( '.contentSection' ).index( $( mappedSectionID ) );
-
-                if ( !isCurrentlySelected ) {
-
-
-                    let oldSelectedIndex = $( '.contentSection' ).index( currentlySelected );
-                    let newSelectedIndex = $( '.contentSection' ).index( $( mappedSectionID ) );
-
-
-                    
-
-                    $( mappedSectionID ).addClass( 'currentlySelected' );
-                    $( mappedSectionID ).removeClass( 'flyInRight' );
-                    $( mappedSectionID ).removeClass( 'flyInLeft' );
-
-
-                    if ( newSelectedIndex < oldSelectedIndex ) {
-                        console.log( 'NEW: IN LEFT, OLD: OUT RIGHT' );
-
-
-                        
-                        currentlySelected.addClass( 'flyOutRight' );
-                        $( mappedSectionID ).addClass( 'flyInLeft' );                        
-                    }
-
-                    else {
-                        console.log( 'NEW: IN RIGHT, OLD: OUT LEFT' );
-
-                        currentlySelected.addClass( 'flyOutLeft' );
-                        $( mappedSectionID ).addClass( 'flyInRight' );
-                    }
-                    
-                    setTimeout( function() {
-
-                        currentlySelected.removeClass( 'flyOutLeft' );
-                        currentlySelected.removeClass( 'flyOutRight' );
-
-
-                        $( mappedSectionID ).removeClass( 'flyInRight' );
-                        $( mappedSectionID ).removeClass( 'flyInLeft' );
-
-                        currentlySelected.removeClass( 'currentlySelected' ); 
-                        currentlySelected = $( '.currentlySelected' ).eq( 0 ); 
-                    }, 1500);
-
-
-                    
-
-
-                    
-                }
-
-            }
-            
-
-            
-
-            let dropdownIsShowing = $( '#navbar1').attr( 'class' ).split(' ').includes( 'show' );
-            if ( dropdownIsShowing ) {
-
-                setTimeout( function() {
-
-                    $( '#mainNavButton' ).click();
-                }, 250);
-                
-            }
-         });
-    });
+    //Set section switching event listeners.
+    setFadeSectionSwitch( '.sectionSelector', '.contentSection' );
     
     //On load effects.
     countUpEffLP( '#years-experience', 0, 20, 500, 3000, 1.35 );
@@ -180,3 +102,74 @@ function countUpEffLP( targetID, startVal, EndVal, delay, duration, durationMult
 
 }
 
+
+function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
+
+    var currentlySelected = $( '.currentlySelected' ).eq( 0 );
+    
+    $( triggersClass ).each( function() {
+        
+         $( this ).click( function() {
+            
+            let mappedSectionID = '#c' + $( this ).attr( 'id' ).slice(1);
+            
+            if ( $( mappedSectionID ).length ) {
+
+                let isCurrentlySelected = $( mappedSectionID ).attr( 'class' ).split(' ').includes( 'currentlySelected' );
+
+                let contentIndex = $( sectionsClass ).index( $( mappedSectionID ) );
+
+                if ( !isCurrentlySelected ) {
+
+
+                    let oldSelectedIndex = $( sectionsClass ).index( currentlySelected );
+                    let newSelectedIndex = $( sectionsClass ).index( $( mappedSectionID ) );
+
+
+                    $( mappedSectionID ).addClass( 'currentlySelected' );
+                    $( mappedSectionID ).removeClass( 'flyInRight' );
+                    $( mappedSectionID ).removeClass( 'flyInLeft' );
+                    $( mappedSectionID ).removeClass( 'flyInRight' );
+                    $( mappedSectionID ).removeClass( 'flyInLeft' );
+
+
+                    if ( newSelectedIndex < oldSelectedIndex ) {
+                        console.log( 'NEW: IN LEFT, OLD: OUT RIGHT' );
+
+                        currentlySelected.addClass( 'flyOutRight' );
+                        $( mappedSectionID ).addClass( 'flyInLeft' );                        
+                    }
+
+                    else {
+                        console.log( 'NEW: IN RIGHT, OLD: OUT LEFT' );
+
+                        currentlySelected.addClass( 'flyOutLeft' );
+                        $( mappedSectionID ).addClass( 'flyInRight' );
+                    }
+                    
+                    setTimeout( function() {
+
+                        currentlySelected.removeClass( 'flyOutLeft' );
+                        currentlySelected.removeClass( 'flyOutRight' );
+
+                        $( mappedSectionID ).removeClass( 'flyInRight' );
+                        $( mappedSectionID ).removeClass( 'flyInLeft' );
+
+                        currentlySelected.removeClass( 'currentlySelected' ); 
+                        currentlySelected = $( '.currentlySelected' ).eq( 0 ); 
+                    }, 1500);
+
+                    
+                }
+
+            }
+                    
+
+            let dropdownIsShowing = $( '#navbar1').attr( 'class' ).split(' ').includes( 'show' );
+            if ( dropdownIsShowing ) {
+                $( '#mainNavButton' ).click();
+            }
+         });
+    });
+
+}

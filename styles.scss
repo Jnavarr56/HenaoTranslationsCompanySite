@@ -113,6 +113,7 @@ footer {
 #navHolder {
     height: 73.6719px;
     
+    background-color: rgba(255, 255, 255, 1);
     
     #mainNav {    
         height: 73.6719px;
@@ -307,9 +308,9 @@ nav.stroke ul li a:after {
 @keyframes FlyOutLeft {
 
     0% {  opacity: 0; filter: blur(0px); left: 0%; transform: scale(1, 1); }
-    50% { filter: blur(10px); left: 5%; transform: scale(0.25, 0.25);  }
-    75% { left: 30%; transform: scale(0.25, 0.25);  }
-    100% { left: 100%; transform: scale(1, 1);  }
+    50% { filter: blur(10px); left: -5%; transform: scale(0.25, 0.25);  }
+    75% { left: -30%; transform: scale(0.25, 0.25);  }
+    100% { left: -100%; transform: scale(1, 1);  }
     
 }
 
