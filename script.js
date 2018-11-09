@@ -2,10 +2,7 @@
 $( document ).ready( function() {
 
 
-      
-
-
-
+    
     //On load roll in effects.
     countUpEffLP( '#years-experience', 0, 20, 500, 3000, 1.35 );
 
@@ -47,13 +44,19 @@ function countUpEffLP( targetID, startVal, EndVal, delay, duration, durationMult
                 clearInterval( countUp );
 
                 setTimeout( function() {
+
                     $( '#landing-text-primary' ).removeClass( 'BlurIn');
                     $( '#landing-text-primary' ).addClass( 'flashSwitch1');
+
                     setTimeout( function() {
+
                         $( '#landing-text-primary' ).html( 'Gladys Henao, M.A. Legal Translator' );
+
                         setTimeout( function() {
+
                             $( '#landing-text-primary' ).addClass( 'flashSwitch2');
                         }, 750);
+
                     }, 250);
 
                     $( "#innerFoot" ).addClass( 'fillFooter' );
@@ -66,9 +69,17 @@ function countUpEffLP( targetID, startVal, EndVal, delay, duration, durationMult
                             $( this ).removeClass( 'appearNav' );
                             $( this ).addClass( 'appearNavAnim' );
                         }); 
-                        $( "#mainNavButton" ).addClass( 'appearNavAnim' );
-                    }, 1500);
 
+                        $( "#mainNavButton" ).addClass( 'appearNavAnim' );
+
+                        setTimeout( function() {
+
+                            let opt = { height: 'auto' };
+
+                            $( "#mainNav" ).css( opt );
+                            $( "#navHolder" ).css( opt );
+                        }, 750);
+                    }, 1500);
 
                 }, 1000);
                 

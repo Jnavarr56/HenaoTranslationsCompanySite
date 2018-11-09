@@ -111,10 +111,14 @@ footer {
     }
 }
 #navHolder {
-
+    height: 78px;
+    
     
     #mainNav {    
+        height: 78px;
+
         padding: 0;
+        
         
         width: 0%;
     
@@ -152,21 +156,26 @@ footer {
         100% { width: 100%; padding: 15px; }
     }
     #brandIcon {
-        height: 25px;
-        width: 25px;
+        height: 35px;
+        width: 35px;
     }
 
     .appearNav {
         display: none;
     }
+
+    div {
+
+        opacity: 0;
+    }
     
     .appearNavAnim {
+        opacity: 0;
 
-        animation: AppearNavAnim .75s 0s ease-in-out 1 forwards;
+        animation: AppearNavAnim .75s .25s ease-in-out 1 forwards;
     }
 
     @keyframes AppearNavAnim {
-        0% { opacity: 0; }
         100% { opacity: 1; }
     }
 

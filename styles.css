@@ -167,32 +167,35 @@ footer {
 @keyframes FillFoot {
   100% {
     width: 100%; } }
-#navHolder #mainNav {
-  padding: 0;
-  width: 0%;
-  overflow: hidden;
-  white-space: nowrap;
-  border-style: none none solid none; }
-  #navHolder #mainNav ul {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center; }
-  #navHolder #mainNav li {
-    color: black;
-    font-family: "Poppins", Arial, Helvetica, sans-serif; }
-    #navHolder #mainNav li a {
+#navHolder {
+  height: 78px; }
+  #navHolder #mainNav {
+    height: 78px;
+    padding: 0;
+    width: 0%;
+    overflow: hidden;
+    white-space: nowrap;
+    border-style: none none solid none; }
+    #navHolder #mainNav ul {
+      width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: space-evenly;
+          -ms-flex-pack: space-evenly;
+              justify-content: space-evenly;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+    #navHolder #mainNav li {
       color: black;
       font-family: "Poppins", Arial, Helvetica, sans-serif; }
-#navHolder .fillNav {
-  -webkit-animation: FillNav 1.50s 0s ease-in-out 1 forwards;
-          animation: FillNav 1.50s 0s ease-in-out 1 forwards; }
+      #navHolder #mainNav li a {
+        color: black;
+        font-family: "Poppins", Arial, Helvetica, sans-serif; }
+  #navHolder .fillNav {
+    -webkit-animation: FillNav 1.50s 0s ease-in-out 1 forwards;
+            animation: FillNav 1.50s 0s ease-in-out 1 forwards; }
 @-webkit-keyframes FillNav {
   100% {
     width: 100%;
@@ -201,25 +204,24 @@ footer {
   100% {
     width: 100%;
     padding: 15px; } }
-#navHolder #brandIcon {
-  height: 25px;
-  width: 25px; }
-#navHolder .appearNav {
-  display: none; }
-#navHolder .appearNavAnim {
-  -webkit-animation: AppearNavAnim .75s 0s ease-in-out 1 forwards;
-          animation: AppearNavAnim .75s 0s ease-in-out 1 forwards; }
-@-webkit-keyframes AppearNavAnim {
-  0% {
+  #navHolder #brandIcon {
+    height: 35px;
+    width: 35px; }
+  #navHolder .appearNav {
+    display: none; }
+  #navHolder div {
     opacity: 0; }
+  #navHolder .appearNavAnim {
+    opacity: 0;
+    -webkit-animation: AppearNavAnim .75s .25s ease-in-out 1 forwards;
+            animation: AppearNavAnim .75s .25s ease-in-out 1 forwards; }
+@-webkit-keyframes AppearNavAnim {
   100% {
     opacity: 1; } }
 @keyframes AppearNavAnim {
-  0% {
-    opacity: 0; }
   100% {
     opacity: 1; } }
-#navHolder button {
-  opacity: 0; }
+  #navHolder button {
+    opacity: 0; }
 
 /*# sourceMappingURL=styles.css.map */
