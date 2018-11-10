@@ -143,36 +143,47 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
                     $( mappedSectionID ).removeClass( 'flyInLeft' );
 
 
-                    if ( newSelectedIndex < oldSelectedIndex ) {
+                    setTimeout( function() {
+
+                        if ( newSelectedIndex < oldSelectedIndex ) {
                         
 
-                        currentlySelected.addClass( 'flyOutRight' );
-                        $( mappedSectionID ).addClass( 'flyInLeft' );
-                    }
+                            currentlySelected.addClass( 'flyOutRight' );
+                            $( mappedSectionID ).addClass( 'flyInLeft' );
+                        }
+    
+                        else {
+                            
+                            currentlySelected.addClass( 'flyOutLeft' );
+                            $( mappedSectionID ).addClass( 'flyInRight' );
+                        }
 
-                    else {
-                        
-                        currentlySelected.addClass( 'flyOutLeft' );
-                        $( mappedSectionID ).addClass( 'flyInRight' );
-                    }
+
+                        setTimeout( function() {
+
+                            currentlySelected.removeClass( 'flyOutLeft' );
+                            currentlySelected.removeClass( 'flyOutRight' );
+    
+                            $( mappedSectionID ).removeClass( 'flyInRight' );
+                            $( mappedSectionID ).removeClass( 'flyInLeft' );
+    
+                            currentlySelected.removeClass( 'currentlySelected' ); 
+                            currentlySelected = $( '.currentlySelected' ).eq( 0 ); 
+    
+                            console.log( $( mappedSectionID ).position() );
+                            console.log( $( mappedSectionID ).offset() );
+    
+                        }, 1500);
+
+
+
+                    }, 200 );
+
+
 
 
                     
-                    setTimeout( function() {
 
-                        currentlySelected.removeClass( 'flyOutLeft' );
-                        currentlySelected.removeClass( 'flyOutRight' );
-
-                        $( mappedSectionID ).removeClass( 'flyInRight' );
-                        $( mappedSectionID ).removeClass( 'flyInLeft' );
-
-                        currentlySelected.removeClass( 'currentlySelected' ); 
-                        currentlySelected = $( '.currentlySelected' ).eq( 0 ); 
-
-                        console.log( $( mappedSectionID ).position() );
-                        console.log( $( mappedSectionID ).offset() );
-
-                    }, 1500);
 
                 }
 

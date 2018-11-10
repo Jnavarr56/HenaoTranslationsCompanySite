@@ -4,13 +4,15 @@ $secondary-font: 'Raleway', Arial, Helvetica, sans-serif;
 $blurry-primary-text-animation-duration: 3s;
 $list-appear-animation-duration: .5s;
 html {
+    height: 100vh;
+    width: 100vw;
     overflow: hidden;
 }
 body {
     overflow: hidden;
     background-color: rgba(255, 255, 255, 1);
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     margin: 0 auto;
     
     //border-style: solid;
