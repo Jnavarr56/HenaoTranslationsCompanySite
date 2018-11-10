@@ -12,6 +12,8 @@ body {
     height: 100vh;
     width: 100vw;
     margin: 0 auto;
+
+    border-style: solid;
 }
 .landing-text {
     color: rgba(0, 0, 0, 1);
@@ -78,7 +80,7 @@ body {
 }
 footer {
     margin: 0;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     height: 10%;
     display: flex;
