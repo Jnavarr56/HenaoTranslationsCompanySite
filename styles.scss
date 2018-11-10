@@ -239,7 +239,6 @@ nav.stroke ul li a.selectedLink:after {
 /////////////////////////////////
 .noneHome {
     position: relative;
-    top: -10px;
     height: 78%;
 
     display: flex;
@@ -261,7 +260,6 @@ nav.stroke ul li a.selectedLink:after {
 }
 .flyInLeft {
     position: absolute;
-    top: 73.671875px;
     animation: FlyInLeft 1.50s 0s ease 1 forwards;
 }
 @keyframes FlyInLeft {
