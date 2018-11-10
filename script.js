@@ -142,6 +142,11 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
                     $( mappedSectionID ).removeClass( 'flyInRight' );
                     $( mappedSectionID ).removeClass( 'flyInLeft' );
 
+                    let dropdownIsShowing = $( '#navbar1').attr( 'class' ).split(' ').includes( 'show' );
+                    if ( dropdownIsShowing ) {
+                        $( '#mainNavButton' ).click();
+                        console.log( 'click' );
+                    }
 
                     setTimeout( function() {
 
@@ -175,25 +180,14 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
     
                         }, 1500);
 
-
-
+                     
+                        console.log( 'start anim' );
                     }, 200 );
-
-
-
-
-                    
-
 
                 }
 
             }
                     
-
-            let dropdownIsShowing = $( '#navbar1').attr( 'class' ).split(' ').includes( 'show' );
-            if ( dropdownIsShowing ) {
-                $( '#mainNavButton' ).click();
-            }
          });
     });
 
