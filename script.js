@@ -136,7 +136,7 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
                     let newSelectedIndex = $( sectionsClass ).index( $( mappedSectionID ) );
 
 
-                    $( mappedSectionID ).addClass( 'currentlySelected' );
+                    
                     $( mappedSectionID ).removeClass( 'flyInRight' );
                     $( mappedSectionID ).removeClass( 'flyInLeft' );
                     $( mappedSectionID ).removeClass( 'flyInRight' );
@@ -145,16 +145,18 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
                     let dropdownIsShowing = $( '#navbar1').attr( 'class' ).split(' ').includes( 'show' );
                     if ( dropdownIsShowing ) {
                         $( '#mainNavButton' ).click();
-                        console.log( 'click' );
+                        
                     }
 
                     setTimeout( function() {
+                        
 
                         if ( newSelectedIndex < oldSelectedIndex ) {
                         
-
+                            
                             currentlySelected.addClass( 'flyOutRight' );
                             $( mappedSectionID ).addClass( 'flyInLeft' );
+                            
                         }
     
                         else {
@@ -163,6 +165,7 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
                             $( mappedSectionID ).addClass( 'flyInRight' );
                         }
 
+                        $( mappedSectionID ).addClass( 'currentlySelected' );
 
                         setTimeout( function() {
 
@@ -175,13 +178,10 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
                             currentlySelected.removeClass( 'currentlySelected' ); 
                             currentlySelected = $( '.currentlySelected' ).eq( 0 ); 
     
-                            console.log( $( mappedSectionID ).position() );
-                            console.log( $( mappedSectionID ).offset() );
-    
                         }, 1500);
 
                      
-                        console.log( 'start anim' );
+                        
                     }, 200 );
 
                 }
