@@ -155,6 +155,8 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
                         currentlySelected.addClass( 'flyOutLeft' );
                         $( mappedSectionID ).addClass( 'flyInRight' );
                     }
+
+
                     
                     setTimeout( function() {
 
@@ -166,9 +168,12 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
 
                         currentlySelected.removeClass( 'currentlySelected' ); 
                         currentlySelected = $( '.currentlySelected' ).eq( 0 ); 
+
+                        console.log( $( mappedSectionID ).position() );
+                        console.log( $( mappedSectionID ).offset() );
+
                     }, 1500);
 
-                    
                 }
 
             }

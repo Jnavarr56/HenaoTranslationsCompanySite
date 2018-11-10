@@ -240,7 +240,6 @@ nav.stroke ul li a.selectedLink:after {
     position: relative;
     height: 78%;
 
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -250,11 +249,6 @@ nav.stroke ul li a.selectedLink:after {
 
         text-align: center;
     }
-
-
-
-
-
 }
 /////////////////////////////////
 .contentSection {
@@ -265,6 +259,7 @@ nav.stroke ul li a.selectedLink:after {
 }
 .flyInLeft {
     position: absolute;
+    top: 73.671875px;
     animation: FlyInLeft 1.50s 0s ease 1 forwards;
 }
 @keyframes FlyInLeft {
@@ -272,7 +267,6 @@ nav.stroke ul li a.selectedLink:after {
     0% {  opacity: 0; filter: blur(10px); left: -100%; transform: scale(1, 1); }
     50% { filter: blur(10px); left: -30%; transform: scale(0.25, 0.25); }
     75% { filter: blur(10px); left: -5%; transform: scale(0.25, 0.25); }
-    
     100% { left: 0%; top: 73.671875px; }
     
 }
@@ -290,6 +284,7 @@ nav.stroke ul li a.selectedLink:after {
 }
 .flyInRight {
     position: absolute;
+    top: 73.671875px;
     animation: FlyInRight 1.50s 0s ease 1 forwards;
 }
 @keyframes FlyInRight {
@@ -297,7 +292,6 @@ nav.stroke ul li a.selectedLink:after {
     0% {  opacity: 0; filter: blur(10px); left: 100%; transform: scale(1, 1); }
     50% { filter: blur(10px); left: 30%; transform: scale(0.25, 0.25); }
     75% { filter: blur(10px); left: 5%; transform: scale(0.25, 0.25); }
-    
     100% { left: 0%; top: 73.671875px; }
     
 }

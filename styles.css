@@ -341,6 +341,7 @@ nav.stroke ul li a.selectedLink:after {
 
 .flyInLeft {
   position: absolute;
+  top: 73.671875px;
   -webkit-animation: FlyInLeft 1.50s 0s ease 1 forwards;
           animation: FlyInLeft 1.50s 0s ease 1 forwards; }
 
@@ -443,6 +444,7 @@ nav.stroke ul li a.selectedLink:after {
             transform: scale(1, 1); } }
 .flyInRight {
   position: absolute;
+  top: 73.671875px;
   -webkit-animation: FlyInRight 1.50s 0s ease 1 forwards;
           animation: FlyInRight 1.50s 0s ease 1 forwards; }
 
