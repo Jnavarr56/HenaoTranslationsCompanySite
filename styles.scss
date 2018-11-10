@@ -1,13 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins|Raleway:800');
-
-
 $primary-font: 'Poppins', Arial, Helvetica, sans-serif;
 $secondary-font: 'Raleway', Arial, Helvetica, sans-serif;
-
 $blurry-primary-text-animation-duration: 3s;
-
 $list-appear-animation-duration: .5s;
-
 html {
     overflow: hidden;
 }
@@ -24,8 +19,7 @@ body {
 }
 .landing-main {
     position: relative;
-    top: 20%;
-    height: 30%;
+    height: 78%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -112,46 +106,31 @@ footer {
 }
 #navHolder {
     height: 73.6719px;
-    
     background-color: rgba(255, 255, 255, 1);
-    
     #mainNav {    
         height: 73.6719px;
-
-        padding: 0;
-        
-        
+        padding: 0;  
         width: 0%;
-    
         overflow: hidden;
-    
         white-space: nowrap;
-    
-        border-style: none none solid none;
-    
+        border-style: none none solid none; 
         ul {
-            width: 100%;
-    
+            width: 100%;  
             display: flex;
             justify-content: space-evenly;
             align-items: center;
         }
         li {
             color: rgba(0, 0, 0, 1);
-            font-family: $primary-font;
-    
+            font-family: $primary-font;   
             a {
-    
                 color: rgba(0, 0, 0, 1);
                 font-family: $primary-font;
             }
         }
-    }
-    
-    .fillNav {
-    
-        animation: FillNav 1.50s 0s ease-in-out 1 forwards;
-    
+    }  
+    .fillNav {    
+        animation: FillNav 1.50s 0s ease-in-out 1 forwards;   
     }
     @keyframes FillNav {
         100% { width: 100%; padding: 15px; }
@@ -160,33 +139,24 @@ footer {
         height: 27.5px;
         width: 27.5px;
     }
-
     .appearNav {
         display: none;
     }
-
     div {
-
         opacity: 0;
-    }
-    
+    }    
     .appearNavAnim {
         opacity: 0;
-
         animation: AppearNavAnim .75s .25s ease-in-out 1 forwards;
     }
-
     @keyframes AppearNavAnim {
         100% { opacity: 1; }
     }
-
     button {
-
         opacity: 0;
     }
 
     button:focus {
-
         outline: none;
     }
 }  
@@ -194,59 +164,48 @@ footer {
     border: none;
     background: transparent !important;
 }
-
 .navbar-toggler:focus {
     outline: none;
     background: transparent !important;
 }
-
 .navbar-toggler .icon-bar {
     background-color: rgba(0, 0, 0, 1);
     transform: rotate(0deg) translate(0px, 0px);
     transition: ease all .2s;
 }
-
 .navbar-toggler .icon-bar {
     display: block;
     width: 22px;
     height: 2px;
     border-radius: 1px;
 }
-
 .navbar-toggler .icon-bar+.icon-bar {
     margin-top: 4px;
 }
-
 .icon-bar:nth-child(2) {
     width: 16px;
     transition: ease all .2s;
 }
-
 .navbar-toggler:hover>.icon-bar:nth-child(2) {
     width: 22px;
     transition: ease all .2s;
 }
-
 .navbar-toggler:active>.icon-bar:nth-child(2) {
     width: 22px;
     transition: ease all .2s;
 }
-
 .navbar-toggler:not(.collapsed) .icon-bar:nth-child(1) {
     transform: rotate(45deg) translate(5px, 4px);
     transition: ease all .2s;
 }
-
 .navbar-toggler:not(.collapsed) .icon-bar:nth-child(2) {
     opacity: 0;
     transition: ease all .2s;
 }
-
 .navbar-toggler:not(.collapsed) .icon-bar:nth-child(3) {
     transform: rotate(-45deg) translate(4px, -4px);
     transition: ease all .2s;
-  }
-  
+}
 nav ul li a,
 nav ul li a:after,
 nav ul li a:before {
@@ -255,7 +214,6 @@ nav ul li a:before {
 nav ul li a:hover {
     color: #555;
 }
-
 nav.stroke ul li a {
     position: relative;
 }
@@ -271,23 +229,40 @@ nav.stroke ul li a:after {
     background: rgba(0, 0, 0, 1);
     height: 2px;
 }
-    nav.stroke ul li a:hover:after {
+nav.stroke ul li a:hover:after {
     width: 100%;
 }
+nav.stroke ul li a.selectedLink:after {
+    width: 100%;
+}
+/////////////////////////////////
 .noneHome {
     position: relative;
     height: 78%;
-}
-.contentSection {
 
-    display: none;
-}
-
-.currentlySelected {
 
     display: flex;
-}
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-evenly; 
 
+    .col {
+
+        text-align: center;
+    }
+
+
+
+
+
+}
+/////////////////////////////////
+.contentSection {
+    display: none;
+}
+.currentlySelected {
+    display: flex;
+}
 .flyInLeft {
     position: absolute;
     animation: FlyInLeft 1.50s 0s ease 1 forwards;
@@ -300,7 +275,6 @@ nav.stroke ul li a:after {
     100% { left: 0%;  }
     
 }
-
 .flyOutLeft {
     position: absolute;
     animation: FlyOutLeft 1.50s 0s ease 1 forwards;
@@ -313,9 +287,6 @@ nav.stroke ul li a:after {
     100% { left: -100%; transform: scale(1, 1);  }
     
 }
-
-
-
 .flyInRight {
     position: absolute;
     animation: FlyInRight 1.50s 0s ease 1 forwards;
@@ -328,7 +299,6 @@ nav.stroke ul li a:after {
     100% { left: 0%; }
     
 }
-
 .flyOutRight {
     position: absolute;
     animation: FlyOutRight 1.50s 0s ease 1 forwards;
@@ -338,6 +308,6 @@ nav.stroke ul li a:after {
     0% {  opacity: 0; filter: blur(0px); left: 0%; transform: scale(1, 1); }
     50% { filter: blur(10px); left: 5%; transform: scale(0.25, 0.25);  }
     75% { left: 30%; transform: scale(0.25, 0.25);  }
-    100% { left: 100%; transform: scale(1, 1);  }
+    100% { left: 120%; transform: scale(1, 1);  }
     
 }

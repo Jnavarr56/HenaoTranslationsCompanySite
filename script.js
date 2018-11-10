@@ -111,6 +111,16 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
         
          $( this ).click( function() {
             
+            
+            $( triggersClass ).each( function( i ) {
+
+
+                $( triggersClass ).eq( i ).removeClass( 'selectedLink' );
+            } );
+
+            $( this ).addClass( 'selectedLink' );
+
+
             let mappedSectionID = '#c' + $( this ).attr( 'id' ).slice(1);
             
             if ( $( mappedSectionID ).length ) {
@@ -134,15 +144,14 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
 
 
                     if ( newSelectedIndex < oldSelectedIndex ) {
-                        console.log( 'NEW: IN LEFT, OLD: OUT RIGHT' );
+                        
 
                         currentlySelected.addClass( 'flyOutRight' );
-                        $( mappedSectionID ).addClass( 'flyInLeft' );                        
+                        $( mappedSectionID ).addClass( 'flyInLeft' );
                     }
 
                     else {
-                        console.log( 'NEW: IN RIGHT, OLD: OUT LEFT' );
-
+                        
                         currentlySelected.addClass( 'flyOutLeft' );
                         $( mappedSectionID ).addClass( 'flyInRight' );
                     }
