@@ -105,12 +105,16 @@ function countUpEffLP( targetID, startVal, EndVal, delay, duration, durationMult
 
 function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
 
-    
+    var activeLinks = true;    
     
     $( triggersClass ).each( function() {
         
         $( this ).click( function() {
             
+            if ( !activeLinks ) {
+
+                return;
+            }
             
             $( triggersClass ).each( function( i ) {
 
@@ -147,6 +151,19 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
                         
                     }
 
+                    activeLinks = false;
+                    $( '.nav-link' ).each( function() {
+                        $( this ).css( 
+                            { 
+                                color: 'grey',
+                                opacity: '0.5'
+                            } 
+                        );
+                    }); 
+
+
+                    
+
                     let mult = oldSelectedIndex < newSelectedIndex ? 1 : -1, sectionIter = oldSelectedIndex + ( 1 * mult );
                     let classToAdd, time = 500;
 
@@ -155,13 +172,45 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
                         time = 0;
                     }
 
+
+
                     classToAdd = newSelectedIndex < oldSelectedIndex ? 'flyOutLeft' : 'flyOutRight';
-                    currentlySelected.addClass( classToAdd );
+                    
                     setTimeout( function() {
 
-                        currentlySelected.removeClass( 'currentlySelected' );
-                        currentlySelected.removeClass( classToAdd );
-                    }, 1500 );
+                        (function () {
+                            let tempSecIter = oldSelectedIndex;
+                            let freezeClassA = classToAdd;
+                            let freezeClassR = classToAdd;
+                            let freezeSec = $( '.contentSection' ).eq( tempSecIter );
+                            
+                            console.log('--');
+                            console.log( 'add class ' + freezeClassA );
+                            console.log( tempSecIter );
+                            console.log( freezeSec[0] );
+                            freezeSec.addClass( freezeClassA );
+
+                            setTimeout( function() {
+
+                                console.log('------------------------------');
+
+                                console.log( 'removing ' +  freezeClassR );
+                                freezeSec.removeClass( freezeClassR );
+                                freezeSec.removeClass( 'currentlySelected' );
+                                console.log( tempSecIter );
+                                console.log( freezeSec[0] );
+
+                            }, 1000 );
+                            console.log('--');
+                        })();
+
+                    }, 200 );
+
+
+
+
+
+
                     
                     setTimeout( function() {
                         //-------------------------------------------------------------------------------------
@@ -179,6 +228,7 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
                             
                             (function () {
                                 let tempSecIter = sectionIter;
+                                let tempNewSel = newSelectedIndex;
                                 let freezeClassA = classToAdd;
                                 let freezeClassR = classToAdd.split(' ').length > 1 ? classToAdd.split(' ')[0] : classToAdd;
                                 let freezeSec = $( '.contentSection' ).eq( tempSecIter );
@@ -198,17 +248,30 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
                                     console.log( tempSecIter );
                                     console.log( freezeSec[0] );
 
-                                }, 1500 );
+                                    if ( tempSecIter === tempNewSel ) {
+
+                                        activeLinks = true;
+                                        $( '.nav-link' ).each( function() {
+                                            $( this ).css( 
+                                                { 
+                                                    color: 'black',
+                                                    opacity: '1'
+                                                } 
+                                            );
+                                        });
+                                    }
+
+                                }, 1000 );
                                 console.log('--');
                             })();
                             
                             sectionIter += ( 1 * mult );
                             
                             if ( sectionIter === ( newSelectedIndex  + ( 1 * mult ) ) ) {
-                                console.log('');
+                                console.log(''); 
                                 clearInterval( cycleThrough );
                             }
-                        }, 500 );
+                        }, time );
                     
                     }, 200 + time );
 

@@ -268,7 +268,7 @@ nav.stroke ul li a.selectedLink:after {
 .flyInLeft {
     position: absolute;
     top: 74.5px;
-    animation: FlyInLeft 1.50s 0s ease 1 forwards;
+    animation: FlyInLeft 1.00s 0s ease 1 forwards;
 }
 @keyframes FlyInLeft {
 
@@ -281,7 +281,7 @@ nav.stroke ul li a.selectedLink:after {
 .flyOutLeft {
     position: absolute;
     top: 74.5px;
-    animation: FlyOutLeft 1.50s 0s ease 1 forwards;
+    animation: FlyOutLeft 1.00s 0s ease 1 forwards;
 }
 @keyframes FlyOutLeft {
 
@@ -294,7 +294,7 @@ nav.stroke ul li a.selectedLink:after {
 .flyInRight {
     position: absolute;
     top: 74.5px;
-    animation: FlyInRight 1.50s 0s ease 1 forwards;
+    animation: FlyInRight 1.00s 0s ease 1 forwards;
 }
 @keyframes FlyInRight {
 
@@ -307,7 +307,7 @@ nav.stroke ul li a.selectedLink:after {
 .flyOutRight {
     position: absolute;
     top: 74.5px;
-    animation: FlyOutRight 1.50s 0s ease 1 forwards;
+    animation: FlyOutRight 1.00s 0s ease 1 forwards;
 }
 @keyframes FlyOutRight {
     
