@@ -121,7 +121,7 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
                 $( triggersClass ).eq( i ).removeClass( 'selectedLink' );
             } );
 
-            $( this ).addClass( 'selectedLink' );
+            //$( this ).addClass( 'selectedLink' );
 
 
             let mappedSectionID = '#c' + $( this ).attr( 'id' ).slice(1);
@@ -137,12 +137,6 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
                     let oldSelectedIndex = $( sectionsClass ).index( currentlySelected );
                     let newSelectedIndex = $( sectionsClass ).index( $( mappedSectionID ) );
 
-
-                    
-                    //$( mappedSectionID ).removeClass( 'flyInRight' );
-                    //$( mappedSectionID ).removeClass( 'flyInLeft' );
-                    //$( mappedSectionID ).removeClass( 'flyInRight' );
-                    //$( mappedSectionID ).removeClass( 'flyInLeft' );
 
                     let dropdownIsShowing = $( '#navbar1').attr( 'class' ).split(' ').includes( 'show' );
                     if ( dropdownIsShowing ) {
@@ -160,9 +154,6 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
                         );
                     }); 
 
-
-                    
-
                     let mult = oldSelectedIndex < newSelectedIndex ? 1 : -1, sectionIter = oldSelectedIndex + ( 1 * mult );
                     let classToAdd, time = 500;
 
@@ -170,8 +161,6 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
 
                         time = 0;
                     }
-
-
 
                     classToAdd = newSelectedIndex < oldSelectedIndex ? 'flyOutLeft' : 'flyOutRight';
                     
@@ -183,36 +172,22 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
                             let freezeClassR = classToAdd;
                             let freezeSec = $( '.contentSection' ).eq( tempSecIter );
                             
-                            console.log('--');
-                            console.log( 'add class ' + freezeClassA );
-                            console.log( tempSecIter );
-                            console.log( freezeSec[0] );
                             freezeSec.addClass( freezeClassA );
 
                             setTimeout( function() {
 
-                                console.log('------------------------------');
-
-                                console.log( 'removing ' +  freezeClassR );
                                 freezeSec.removeClass( freezeClassR );
                                 freezeSec.removeClass( 'currentlySelected' );
-                                console.log( tempSecIter );
-                                console.log( freezeSec[0] );
 
                             }, 1000 );
-                            console.log('--');
+
                         })();
 
                     }, 250 );
 
 
-
-
-
-
-                    
                     setTimeout( function() {
-                        //-------------------------------------------------------------------------------------
+                        
 
                         let cycleThrough = setInterval( function() {
 
@@ -225,6 +200,10 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
                                 classToAdd = newSelectedIndex < oldSelectedIndex ? 'flyAcrossToLeft' : 'flyAcrossToRight';
                             }
                             
+                            
+
+
+
                             (function () {
                                 let tempSecIter = sectionIter;
                                 let tempNewSel = newSelectedIndex;
@@ -232,20 +211,11 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
                                 let freezeClassR = classToAdd.split(' ').length > 1 ? classToAdd.split(' ')[0] : classToAdd;
                                 let freezeSec = $( '.contentSection' ).eq( tempSecIter );
                                 
-                                console.log('--');
-                                console.log( 'add class ' + freezeClassA );
-                                console.log( tempSecIter );
-                                console.log( freezeSec[0] );
                                 freezeSec.addClass( freezeClassA );
 
                                 setTimeout( function() {
 
-                                    console.log('------------------------------');
-
-                                    console.log( 'removing ' +  freezeClassR );
                                     freezeSec.removeClass( freezeClassR );
-                                    console.log( tempSecIter );
-                                    console.log( freezeSec[0] );
 
                                     if ( tempSecIter === tempNewSel ) {
 
@@ -261,14 +231,30 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
                                     }
 
                                 }, 1000 );
-                                console.log('--');
+
+
+                                let linkId = '#s' + $( '.contentSection' ).eq( sectionIter ).attr( 'id' ).slice(1);
+
+                                $( linkId ).addClass( 'selectedLink' );
+                                
+                                if ( tempNewSel !== tempSecIter ) {
+
+                                    setTimeout( function() {
+
+
+                                        $( linkId ).removeClass( 'selectedLink' );
+                                    }, 200 );
+                                    
+                                }
+
                             })();
                             
                             sectionIter += ( 1 * mult );
                             
                             if ( sectionIter === ( newSelectedIndex  + ( 1 * mult ) ) ) {
-                                console.log(''); 
+                                
                                 clearInterval( cycleThrough );
+
                             }
                         }, time );
                     
