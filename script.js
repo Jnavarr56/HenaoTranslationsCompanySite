@@ -10,9 +10,15 @@ $( document ).ready( function() {
     
 
 
+    addHoverColorContact();
+    $( window ).resize( function() {
+        resizeForm();
+    } );
+        
+
+    
+
 } );
-
-
 
 
 
@@ -188,7 +194,6 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
 
                     setTimeout( function() {
                         
-
                         let cycleThrough = setInterval( function() {
 
                             if ( sectionIter === newSelectedIndex ) {
@@ -200,9 +205,6 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
                                 classToAdd = newSelectedIndex < oldSelectedIndex ? 'flyAcrossToLeft' : 'flyAcrossToRight';
                             }
                             
-                            
-
-
 
                             (function () {
                                 let tempSecIter = sectionIter;
@@ -228,6 +230,11 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
                                                 } 
                                             );
                                         });
+                                    }
+
+                                    if ( tempSecIter === 4 ) {
+
+                                        resizeForm();
                                     }
 
                                 }, 1000 );
@@ -267,4 +274,37 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
         });
     });
 
+}
+
+//Resize the form
+function resizeForm() {
+    var totPx = 0;
+    $( '.sizeForm' ).each( function() {
+        totPx += $( this ).outerHeight();
+    } );
+    console.log( totPx );
+    $( '#nmForm' ).css( 
+        {
+            height: `${ totPx }px`,
+            top: `${ - ( totPx / 6 ) }px`,
+        } 
+    );
+} 
+
+
+function addHoverColorContact() {
+    $( '.hc' ).each( function() {
+        $( this ).hover( 
+            function() {
+                $( this ).parent().children().each( function( s ) {
+                    $( this ).parent().children().eq( s ).addClass( 'hoverContact' );
+                } );
+            },
+            function() {
+                $( this ).parent().children().each( function( s ) {
+                    $( this ).parent().children().eq( s ).removeClass( 'hoverContact' );
+                } );
+            }
+        );
+    } );
 }

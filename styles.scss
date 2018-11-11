@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins|Raleway:800');
+
 $primary-font: 'Poppins', Arial, Helvetica, sans-serif;
 $secondary-font: 'Raleway', Arial, Helvetica, sans-serif;
 $blurry-primary-text-animation-duration: 3s;
 $list-appear-animation-duration: .5s;
+
+$nav-height-arbit: 73.6719px;
+$nav-height-arbit-num: 73.6719;
 html {
     height: 100vh;
     width: 100vw;
@@ -87,7 +91,12 @@ footer {
     z-index: 100;
 
 
-    height: 10%;
+
+
+    //height: 10%;
+
+    height: $nav-height-arbit;
+
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -113,15 +122,18 @@ footer {
     }
 }
 #navHolder {
-    height: 73.6719px;
+    height: $nav-height-arbit;
+    
     background-color: rgba(255, 255, 255, 1);
     #mainNav {    
-        height: 73.6719px;
+        height: $nav-height-arbit;
+        
         padding: 0;  
         width: 0%;
         overflow: hidden;
         white-space: nowrap;
         border-style: none none solid none; 
+        background-color: rgba(255, 255, 255, 1);
         ul {
             width: 100%;  
             display: flex;
@@ -246,13 +258,12 @@ nav.stroke ul li a.selectedLink:after {
 /////////////////////////////////
 .noneHome {
     position: relative;
-    height: 78%;
+    height: calc( 100% - 147.3438px );
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: space-evenly; 
-
+    justify-content: space-evenly;
+    align-items: center; 
     .col {
 
         text-align: center;
@@ -334,7 +345,6 @@ nav.stroke ul li a.selectedLink:after {
     100% { left: 100%; }
     
 }
-
 .flyAcrossToLeft {
     display: flex;
     position: absolute;
@@ -348,4 +358,235 @@ nav.stroke ul li a.selectedLink:after {
     0% { left: 100%; }
     100% { left: -100%; }
 
+}
+#footerNote {
+    font-style: italic; 
+    font-family: $primary-font; 
+    position: relative;
+    top: 20%;
+
+}
+
+
+
+
+//-------------------------------------------------------------------
+//--------------------------------------
+//Contact Section
+#ccontact {
+    //overflow: scroll;
+    justify-content: center;
+    .row {
+        height: 25%;
+        width: 100%;
+        .col { text-align: initial; }
+    }
+    .row:nth-of-type(1) {//ROW 1
+        height: 15%;
+        
+        overflow: visible;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-start;
+
+        position: relative;
+        div:nth-of-type(1) {//COL 1
+            align-self: center;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 0% 0% 0% 15%;
+            h1 {
+                margin: 2% 0 0 0;
+                padding: 0 0 5% 0;
+                font-family: $primary-font;
+                font-size: 300%;
+                color: black;
+                
+                //position: relative;
+                //right: 20%;
+            }
+        }
+        div:nth-of-type(2) {//COL2
+            //position: relative;
+            //bottom: 20px;
+            //height: 600%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-end;
+            padding: 0 15% 0 0;
+            //border-style: solid;
+            //z-index: 999;}
+        }   
+    }
+    .row:nth-of-type(2) {//ROW 2
+        //height: 30%;
+        height: auto;
+
+        div:nth-of-type(1) {//COL 1
+            height: auto;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-start;
+            padding: 0% 0% 0% 15%;
+            p {                
+                font-family: $primary-font;
+                color: black;
+            }
+        }
+        div:nth-of-type(2) {//COL2
+            position: relative;
+            display: flex;
+            form {
+                position: absolute;
+                left: 0%;
+                top: 0%;
+
+                padding: 0 0 0 7.5%;
+                margin: 0;
+                width: 70%;
+
+                //max-height: 675.4849999999999px;
+                height: 500%;
+    
+                
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+
+                textarea { height: 30%; }
+                button { font-family: $primary-font !important; }
+
+                iframe {
+                    
+                    max-height: 296.172px;
+                }
+            }
+        }   
+    }
+    .row:nth-of-type(3) {//ROW 3 AND ROW 4
+        height: auto;
+        div:nth-of-type(1) {//COL 1
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 0 0 0 18.5%;
+            ul {
+                //padding: 0 0 0 5%;
+                position: relative;
+                top: 5%;
+                right: 10%;
+                margin: 5% 0 0 0;
+                padding: 0;
+                li {
+                    margin: 0% 0 15% 0;
+                    list-style-type: none;
+                    p { 
+                        font-family: $primary-font;
+                        color: black;
+                        position: relative;
+                        bottom: 7.5px;
+                    }
+                }
+            }
+        }
+        div:nth-of-type(2) {//COL2
+            display: flex;
+        }   
+    }
+    .row:last-of-type {
+        display: none;
+
+        div {
+            padding: 0;
+        }
+    }
+}
+
+
+//When Small
+@media (max-width: 767px) {
+
+    //-CONTACT SECTION-------------------------------------------------------------
+    #ccontact { 
+        overflow: scroll;
+        
+        //ROW 1 ------------------------------------------
+        .row:nth-of-type(1) {
+            div:nth-of-type(1) { 
+                justify-content: center; 
+                padding: 0;
+                h1 {
+                    font-size: 200%;
+                    right: 0%;
+                }
+            }
+            div:nth-of-type(2) { display: none !important; } 
+        }
+        //ROW 2 ------------------------------------------
+        .row:nth-of-type(2) {
+            //height: 87.5%;
+            div:nth-of-type(1) {
+                padding: 0 10%;
+                p { font-size: 80%;}
+            }
+            div:nth-of-type(2) { display: none !important; }
+        }
+
+        //ROW 3 ------------------------------------------
+        .row:nth-of-type(3) {
+            div:nth-of-type(1) { 
+                justify-content: center;
+                padding: 0;
+                font-size: 80%; 
+            }
+            div:nth-of-type(2) { display: none !important; }
+        }
+        //LAST ROW
+        .row:last-of-type { 
+            display: flex !important;
+            height: auto;
+            position: absolute;
+            top: 100%;
+            height: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+            div {
+                height: 100%;
+                width: 100%;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                form {  
+                    height: 100%;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    align-items: center;
+                }
+            }
+        } 
+    }
+    //-/CONTACT SECTION-------------------------------------------------------------
+
+}
+//--------------------------------------
+//-------------------------------------------------------------------
+
+ 
+.hoverContact {
+
+    color: blue !important;
+}
+.hc {
+
+    display: inline;
 }
