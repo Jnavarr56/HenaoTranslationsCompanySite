@@ -547,5 +547,53 @@ nav.stroke ul li a.selectedLink:after {
     left: 120%;
     -webkit-transform: scale(1, 1);
             transform: scale(1, 1); } }
+.flyAcrossToRight {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 74.5px;
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+  -webkit-transform: scale(0.25, 0.25);
+          transform: scale(0.25, 0.25);
+  -webkit-animation: FlyAcrossToRight .75s 0s ease 1 forwards;
+          animation: FlyAcrossToRight .75s 0s ease 1 forwards; }
+
+@-webkit-keyframes FlyAcrossToRight {
+  0% {
+    left: -100%; }
+  100% {
+    left: 100%; } }
+
+@keyframes FlyAcrossToRight {
+  0% {
+    left: -100%; }
+  100% {
+    left: 100%; } }
+.flyAcrossToLeft {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 74.5px;
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+  -webkit-transform: scale(0.25, 0.25);
+          transform: scale(0.25, 0.25);
+  -webkit-animation: FlyAcrossToLeft .75s 0s ease 1 forwards;
+          animation: FlyAcrossToLeft .75s 0s ease 1 forwards; }
+
+@-webkit-keyframes FlyAcrossToLeft {
+  0% {
+    left: 100%; }
+  100% {
+    left: -100%; } }
+
+@keyframes FlyAcrossToLeft {
+  0% {
+    left: 100%; }
+  100% {
+    left: -100%; } }
 
 /*# sourceMappingURL=styles.css.map */

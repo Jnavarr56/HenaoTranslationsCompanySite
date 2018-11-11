@@ -66,9 +66,9 @@ function countUpEffLP( targetID, startVal, EndVal, delay, duration, durationMult
                         setTimeout( function() {
 
                             $( '#landing-text-primary' ).addClass( 'flashSwitch2');
-                        }, 750);
+                        }, 750 );
 
-                    }, 250);
+                    }, 250 );
 
                     $( "#innerFoot" ).addClass( 'fillFooter' );
                     $( "#mainNav" ).addClass( 'fillNav' );
@@ -89,10 +89,10 @@ function countUpEffLP( targetID, startVal, EndVal, delay, duration, durationMult
 
                             $( "#mainNav" ).css( opt );
                             $( "#navHolder" ).css( opt );
-                        }, 750);
-                    }, 1500);
+                        }, 750 );
+                    }, 1500 );
 
-                }, 1000);
+                }, 1000 );
                 
             }
 
@@ -105,11 +105,11 @@ function countUpEffLP( targetID, startVal, EndVal, delay, duration, durationMult
 
 function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
 
-    var currentlySelected = $( '.currentlySelected' ).eq( 0 );
+    
     
     $( triggersClass ).each( function() {
         
-         $( this ).click( function() {
+        $( this ).click( function() {
             
             
             $( triggersClass ).each( function( i ) {
@@ -126,8 +126,7 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
             if ( $( mappedSectionID ).length ) {
 
                 let isCurrentlySelected = $( mappedSectionID ).attr( 'class' ).split(' ').includes( 'currentlySelected' );
-
-                let contentIndex = $( sectionsClass ).index( $( mappedSectionID ) );
+                let currentlySelected = $( '.currentlySelected' ).eq( 0 );
 
                 if ( !isCurrentlySelected ) {
 
@@ -137,10 +136,10 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
 
 
                     
-                    $( mappedSectionID ).removeClass( 'flyInRight' );
-                    $( mappedSectionID ).removeClass( 'flyInLeft' );
-                    $( mappedSectionID ).removeClass( 'flyInRight' );
-                    $( mappedSectionID ).removeClass( 'flyInLeft' );
+                    //$( mappedSectionID ).removeClass( 'flyInRight' );
+                    //$( mappedSectionID ).removeClass( 'flyInLeft' );
+                    //$( mappedSectionID ).removeClass( 'flyInRight' );
+                    //$( mappedSectionID ).removeClass( 'flyInLeft' );
 
                     let dropdownIsShowing = $( '#navbar1').attr( 'class' ).split(' ').includes( 'show' );
                     if ( dropdownIsShowing ) {
@@ -148,10 +147,80 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
                         
                     }
 
+                    let mult = oldSelectedIndex < newSelectedIndex ? 1 : -1, sectionIter = oldSelectedIndex;
+                    let classToAdd;
                     setTimeout( function() {
-                        
+                        //-------------------------------------------------------------------------------------
 
-                        if ( newSelectedIndex < oldSelectedIndex ) {
+                        let cycleThrough = setInterval( function() {
+
+                            if ( sectionIter === oldSelectedIndex ) {
+
+                                classToAdd = newSelectedIndex < oldSelectedIndex ? 'flyOutLeft' : 'flyOutRight';
+                                (function () {
+                                    let tempSecIter = sectionIter;
+                                    
+                                    
+
+                                    setTimeout( function() {
+
+                                        $( '.contentSection' ).eq( tempSecIter ).removeClass( 'currentlySelected' );
+                                    }, 1500 );
+
+                                })();
+
+
+
+
+                            }
+
+                            else if ( sectionIter === newSelectedIndex ) {
+                                classToAdd = newSelectedIndex < oldSelectedIndex ?  'flyInRight' : 'flyInLeft';
+                                classToAdd = classToAdd + ' currentlySelected';
+                            }
+
+                            else {
+                                classToAdd = newSelectedIndex < oldSelectedIndex ? 'flyAcrossToLeft' : 'flyAcrossToRight';
+                            }
+                            
+                            (function () {
+                                let tempSecIter = sectionIter;
+                                let freezeClassA = classToAdd;
+                                let freezeClassR = classToAdd.split(' ').length > 1 ? classToAdd.split(' ')[0] : classToAdd;
+                                let freezeSec = $( '.contentSection' ).eq( tempSecIter );
+                                
+                                console.log('--');
+                                console.log( 'add class ' + freezeClassA );
+                                console.log( tempSecIter );
+                                console.log( freezeSec[0] );
+                                freezeSec.addClass( freezeClassA );
+
+                                setTimeout( function() {
+
+                                    console.log('------------------------------');
+
+                                    console.log( 'removing ' +  freezeClassR );
+                                    freezeSec.removeClass( freezeClassR );
+                                    console.log( tempSecIter );
+                                    console.log( freezeSec[0] );
+
+                                }, 1500 );
+                                console.log('--');
+                            })();
+                            
+                            
+
+
+                            sectionIter += ( 1 * mult );
+                            
+                            if ( sectionIter === ( newSelectedIndex  + ( 1 * mult ) ) ) {
+                                console.log('');
+                                clearInterval( cycleThrough );
+                            }
+                        }, 1500 );
+                        //-------------------------------------------------------------------------------------
+
+                        /*if ( newSelectedIndex < oldSelectedIndex ) {
                         
                             
                             currentlySelected.addClass( 'flyOutRight' );
@@ -164,7 +233,7 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
                             currentlySelected.addClass( 'flyOutLeft' );
                             $( mappedSectionID ).addClass( 'flyInRight' );
                         }
-
+                    
                         $( mappedSectionID ).addClass( 'currentlySelected' );
 
                         setTimeout( function() {
@@ -178,9 +247,9 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
                             currentlySelected.removeClass( 'currentlySelected' ); 
                             currentlySelected = $( '.currentlySelected' ).eq( 0 ); 
     
-                        }, 1500);
+                        }, 1500); */
 
-                     
+                    
                         
                     }, 200 );
 
@@ -188,7 +257,7 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
 
             }
                     
-         });
+        });
     });
 
 }

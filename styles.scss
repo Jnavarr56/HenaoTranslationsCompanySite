@@ -320,3 +320,34 @@ nav.stroke ul li a.selectedLink:after {
 .container-fluid {
     //border-style: dashed;
 }
+
+
+.flyAcrossToRight {
+    display: flex;
+    position: absolute;
+    top: 74.5px;
+    filter: blur(10px); 
+    transform: scale(0.25, 0.25);
+    animation: FlyAcrossToRight .75s 0s ease 1 forwards;
+}
+@keyframes FlyAcrossToRight {
+    
+    0% { left: -100%; }
+    100% { left: 100%; }
+    
+}
+
+.flyAcrossToLeft {
+    display: flex;
+    position: absolute;
+    top: 74.5px;
+    filter: blur(10px); 
+    transform: scale(0.25, 0.25);
+    animation: FlyAcrossToLeft .75s 0s ease 1 forwards;
+}
+@keyframes FlyAcrossToLeft {
+    
+    0% { left: 100%; }
+    100% { left: -100%; }
+    
+}
