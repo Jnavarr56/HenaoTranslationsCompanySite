@@ -232,10 +232,21 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
                                         });
                                     }
 
+                                    //Right before contact section loads.
                                     if ( tempSecIter === 4 ) {
 
                                         resizeForm();
+
+                                        addContactTitleWrite();
+
+                                        
+
+
+
+
+
                                     }
+                                    //-------------------------------------/contact
 
                                 }, 1000 );
 
@@ -307,4 +318,46 @@ function addHoverColorContact() {
             }
         );
     } );
+}
+
+
+function addContactTitleWrite() {
+
+
+    $( '#gIT' ).text( '' );
+    
+    setTimeout( function() {
+
+        let phrase = 'Get    in    touch.', lettCount = 0, isSpace = false;
+
+        let writeGIT = setInterval( function() {
+
+            
+            if ( !isSpace ) {
+                let orig = $( '#gIT' ).text();
+                orig += phrase[ lettCount ];
+                $( '#gIT' ).text( orig ); 
+            }
+
+
+            if ( phrase[ lettCount ] === ' ' ) { isSpace === true;}
+            else {
+                isSpace = false;
+
+                if ( phrase[ lettCount + 1 ] !== ' ' ) {
+                    isSpace = false;
+                }
+            }
+        
+
+            lettCount ++;
+            if ( lettCount === phrase.length ) {
+                clearInterval( writeGIT );
+            }
+        }, 75 );
+        
+
+
+
+    }, 500 );
 }

@@ -745,7 +745,21 @@ nav.stroke ul li a.selectedLink:after {
 
 @media (max-width: 767px) {
   #ccontact {
-    overflow: scroll; }
+    overflow-y: scroll; }
+    #ccontact::-webkit-scrollbar {
+      width: .50rem;
+      position: relative;
+      left: 5px; }
+    #ccontact::-webkit-scrollbar-button {
+      /* 2 */ }
+    #ccontact::-webkit-scrollbar-track-piece {
+      background-color: rgba(0, 0, 0, 0.5); }
+    #ccontact::-webkit-scrollbar-thumb {
+      background-color: white;
+      border-style: solid;
+      border-color: rgba(0, 0, 0, 0.8); }
+    #ccontact::-webkit-scrollbar-corner {
+      /* 6 */ }
     #ccontact .row:nth-of-type(1) div:nth-of-type(1) {
       -webkit-box-pack: center;
           -ms-flex-pack: center;
