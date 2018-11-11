@@ -1,37 +1,599 @@
-/*
-Error: Invalid CSS after "#": expected "{", was ""
-        on line 352 of /Users/jorgenavarro/Desktop/GladysHenaoTranslations/styles.scss
+@import url("https://fonts.googleapis.com/css?family=Poppins|Raleway:800");
+html {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden; }
 
-347:     
-348:     0% { left: 100%; }
-349:     100% { left: -100%; }
-350: 
-351: }
-352: #
+body {
+  overflow: hidden;
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto; }
 
-Backtrace:
-/Users/jorgenavarro/Desktop/GladysHenaoTranslations/styles.scss:352
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:1278:in `expected'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:1208:in `expected'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:1203:in `tok!'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:677:in `block'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:670:in `ruleset'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:696:in `block_child'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:689:in `block_contents'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:137:in `stylesheet'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:41:in `parse'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:414:in `_to_tree'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:389:in `_render_with_sourcemap'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:307:in `render_with_sourcemap'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/exec/sass_scss.rb:391:in `run'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/exec/sass_scss.rb:63:in `process_result'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/exec/base.rb:52:in `parse'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/exec/base.rb:19:in `parse!'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/bin/sass:13:in `<top (required)>'
-/Applications/Koala.app/Contents/Resources/app.nw/bin/sass:22:in `load'
-/Applications/Koala.app/Contents/Resources/app.nw/bin/sass:22:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"#\": expected \"{\", was \"\"\A         on line 352 of /Users/jorgenavarro/Desktop/GladysHenaoTranslations/styles.scss\A \A 347:     \A 348:     0% { left: 100%; }\A 349:     100% { left: -100%; }\A 350: \A 351: }\A 352: #"; }
+.landing-text {
+  color: black;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  opacity: 0; }
+
+.landing-main {
+  position: relative;
+  height: 78%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: space-evenly;
+      -ms-flex-align: space-evenly;
+          align-items: space-evenly; }
+  .landing-main .row {
+    margin: 0% 0%; }
+    .landing-main .row:nth-child(1) {
+      height: 50%; }
+    .landing-main .row div {
+      height: 100%;
+      width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+      .landing-main .row div .flashSwitch1 {
+        -webkit-animation: FadeOutInHomeQuick1 .25s 0s ease-in-out 1 forwards;
+                animation: FadeOutInHomeQuick1 .25s 0s ease-in-out 1 forwards; }
+@-webkit-keyframes FadeOutInHomeQuick1 {
+  0% {
+    opacity: 1;
+    -webkit-filter: blur(0px);
+            filter: blur(0px); }
+  100% {
+    opacity: 0;
+    -webkit-filter: blur(10px);
+            filter: blur(10px); } }
+@keyframes FadeOutInHomeQuick1 {
+  0% {
+    opacity: 1;
+    -webkit-filter: blur(0px);
+            filter: blur(0px); }
+  100% {
+    opacity: 0;
+    -webkit-filter: blur(10px);
+            filter: blur(10px); } }
+      .landing-main .row div .flashSwitch2 {
+        font-size: 300%;
+        -webkit-animation: FadeOutInHomeQuick2 .75s 0s ease-in-out 1 forwards;
+                animation: FadeOutInHomeQuick2 .75s 0s ease-in-out 1 forwards; }
+@-webkit-keyframes FadeOutInHomeQuick2 {
+  0% {
+    opacity: 0;
+    -webkit-filter: blur(10px);
+            filter: blur(10px); }
+  100% {
+    opacity: 1;
+    -webkit-filter: blur(0px);
+            filter: blur(0px); } }
+@keyframes FadeOutInHomeQuick2 {
+  0% {
+    opacity: 0;
+    -webkit-filter: blur(10px);
+            filter: blur(10px); }
+  100% {
+    opacity: 1;
+    -webkit-filter: blur(0px);
+            filter: blur(0px); } }
+      .landing-main .row div #landing-text-primary {
+        position: relative;
+        margin: 0;
+        padding: 0; }
+      .landing-main .row div .BlurIn {
+        -webkit-animation: BlurInPrimaryLandingText 3s 0s linear 1 forwards;
+                animation: BlurInPrimaryLandingText 3s 0s linear 1 forwards; }
+@-webkit-keyframes BlurInPrimaryLandingText {
+  0% {
+    opacity: 0;
+    -webkit-filter: blur(10px);
+            filter: blur(10px); }
+  100% {
+    opacity: 1;
+    -webkit-filter: blur(0px);
+            filter: blur(0px); } }
+@keyframes BlurInPrimaryLandingText {
+  0% {
+    opacity: 0;
+    -webkit-filter: blur(10px);
+            filter: blur(10px); }
+  100% {
+    opacity: 1;
+    -webkit-filter: blur(0px);
+            filter: blur(0px); } }
+      .landing-main .row div .home-list-item {
+        padding: 0;
+        margin: 0%; }
+      .landing-main .row div .listItemAppear {
+        -webkit-animation: ListItemAppear .5s 0s ease 1 forwards;
+                animation: ListItemAppear .5s 0s ease 1 forwards; }
+@-webkit-keyframes ListItemAppear {
+  100% {
+    opacity: 1; } }
+@keyframes ListItemAppear {
+  100% {
+    opacity: 1; } }
+footer {
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+  z-index: 100;
+  height: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  footer div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 100%;
+    width: 0%;
+    border-top-style: solid;
+    overflow: hidden; }
+    footer div p {
+      white-space: nowrap;
+      font-size: 50%; }
+  footer .fillFooter {
+    background-color: white;
+    -webkit-animation: FillFoot 1.50s 0s ease-in-out 1 forwards;
+            animation: FillFoot 1.50s 0s ease-in-out 1 forwards; }
+@-webkit-keyframes FillFoot {
+  100% {
+    width: 100%; } }
+@keyframes FillFoot {
+  100% {
+    width: 100%; } }
+#navHolder {
+  height: 73.6719px;
+  background-color: white; }
+  #navHolder #mainNav {
+    height: 73.6719px;
+    padding: 0;
+    width: 0%;
+    overflow: hidden;
+    white-space: nowrap;
+    border-style: none none solid none; }
+    #navHolder #mainNav ul {
+      width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: space-evenly;
+          -ms-flex-pack: space-evenly;
+              justify-content: space-evenly;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+    #navHolder #mainNav li {
+      color: black;
+      font-family: "Poppins", Arial, Helvetica, sans-serif; }
+      #navHolder #mainNav li a {
+        color: black;
+        font-family: "Poppins", Arial, Helvetica, sans-serif; }
+  #navHolder .fillNav {
+    -webkit-animation: FillNav 1.50s 0s ease-in-out 1 forwards;
+            animation: FillNav 1.50s 0s ease-in-out 1 forwards; }
+@-webkit-keyframes FillNav {
+  100% {
+    width: 100%;
+    padding: 15px; } }
+@keyframes FillNav {
+  100% {
+    width: 100%;
+    padding: 15px; } }
+  #navHolder #brandIcon {
+    height: 27.5px;
+    width: 27.5px; }
+  #navHolder .appearNav {
+    display: none; }
+  #navHolder div {
+    opacity: 0; }
+  #navHolder .appearNavAnim {
+    opacity: 0;
+    -webkit-animation: AppearNavAnim .75s .25s ease-in-out 1 forwards;
+            animation: AppearNavAnim .75s .25s ease-in-out 1 forwards; }
+@-webkit-keyframes AppearNavAnim {
+  100% {
+    opacity: 1; } }
+@keyframes AppearNavAnim {
+  100% {
+    opacity: 1; } }
+  #navHolder button {
+    opacity: 0; }
+  #navHolder button:focus {
+    outline: none; }
+
+.navbar-toggler {
+  border: none;
+  background: transparent !important; }
+
+.navbar-toggler:focus {
+  outline: none;
+  background: transparent !important; }
+
+.navbar-toggler .icon-bar {
+  background-color: black;
+  -webkit-transform: rotate(0deg) translate(0px, 0px);
+          transform: rotate(0deg) translate(0px, 0px);
+  -webkit-transition: ease all .2s;
+  transition: ease all .2s; }
+
+.navbar-toggler .icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px; }
+
+.navbar-toggler .icon-bar + .icon-bar {
+  margin-top: 4px; }
+
+.icon-bar:nth-child(2) {
+  width: 16px;
+  -webkit-transition: ease all .2s;
+  transition: ease all .2s; }
+
+.navbar-toggler:hover > .icon-bar:nth-child(2) {
+  width: 22px;
+  -webkit-transition: ease all .2s;
+  transition: ease all .2s; }
+
+.navbar-toggler:active > .icon-bar:nth-child(2) {
+  width: 22px;
+  -webkit-transition: ease all .2s;
+  transition: ease all .2s; }
+
+.navbar-toggler:not(.collapsed) .icon-bar:nth-child(1) {
+  -webkit-transform: rotate(45deg) translate(5px, 4px);
+          transform: rotate(45deg) translate(5px, 4px);
+  -webkit-transition: ease all .2s;
+  transition: ease all .2s; }
+
+.navbar-toggler:not(.collapsed) .icon-bar:nth-child(2) {
+  opacity: 0;
+  -webkit-transition: ease all .2s;
+  transition: ease all .2s; }
+
+.navbar-toggler:not(.collapsed) .icon-bar:nth-child(3) {
+  -webkit-transform: rotate(-45deg) translate(4px, -4px);
+          transform: rotate(-45deg) translate(4px, -4px);
+  -webkit-transition: ease all .2s;
+  transition: ease all .2s; }
+
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+  -webkit-transition: ease-in-out all .25s;
+  transition: ease-in-out all .25s; }
+
+nav ul li a:hover {
+  color: #555; }
+
+nav.stroke ul li a {
+  position: relative; }
+
+nav.stroke ul li a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: black;
+  height: 2px; }
+
+nav.stroke ul li a:hover:after {
+  width: 100%; }
+
+nav.stroke ul li a.selectedLink:after {
+  width: 100%; }
+
+.noneHome {
+  position: relative;
+  height: 78%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: space-evenly;
+      -ms-flex-align: space-evenly;
+          align-items: space-evenly; }
+  .noneHome .col {
+    text-align: center; }
+
+.contentSection {
+  display: none; }
+
+.currentlySelected {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.flyInLeft {
+  position: absolute;
+  top: 74.5px;
+  -webkit-animation: FlyInLeft 1.00s 0s ease 1 forwards;
+          animation: FlyInLeft 1.00s 0s ease 1 forwards; }
+
+@-webkit-keyframes FlyInLeft {
+  0% {
+    opacity: 0;
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    left: -100%;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); }
+  50% {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    left: -30%;
+    -webkit-transform: scale(0.25, 0.25);
+            transform: scale(0.25, 0.25); }
+  75% {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    left: -5%;
+    -webkit-transform: scale(0.25, 0.25);
+            transform: scale(0.25, 0.25); }
+  100% {
+    left: 0%; } }
+
+@keyframes FlyInLeft {
+  0% {
+    opacity: 0;
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    left: -100%;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); }
+  50% {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    left: -30%;
+    -webkit-transform: scale(0.25, 0.25);
+            transform: scale(0.25, 0.25); }
+  75% {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    left: -5%;
+    -webkit-transform: scale(0.25, 0.25);
+            transform: scale(0.25, 0.25); }
+  100% {
+    left: 0%; } }
+.flyOutLeft {
+  position: absolute;
+  top: 74.5px;
+  -webkit-animation: FlyOutLeft 1.00s 0s ease 1 forwards;
+          animation: FlyOutLeft 1.00s 0s ease 1 forwards; }
+
+@-webkit-keyframes FlyOutLeft {
+  0% {
+    opacity: 1;
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    left: 0%;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); }
+  50% {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    left: -5%;
+    -webkit-transform: scale(0.25, 0.25);
+            transform: scale(0.25, 0.25); }
+  75% {
+    left: -30%;
+    -webkit-transform: scale(0.25, 0.25);
+            transform: scale(0.25, 0.25); }
+  100% {
+    left: -100%;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); } }
+
+@keyframes FlyOutLeft {
+  0% {
+    opacity: 1;
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    left: 0%;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); }
+  50% {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    left: -5%;
+    -webkit-transform: scale(0.25, 0.25);
+            transform: scale(0.25, 0.25); }
+  75% {
+    left: -30%;
+    -webkit-transform: scale(0.25, 0.25);
+            transform: scale(0.25, 0.25); }
+  100% {
+    left: -100%;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); } }
+.flyInRight {
+  position: absolute;
+  top: 74.5px;
+  -webkit-animation: FlyInRight 1.00s 0s ease 1 forwards;
+          animation: FlyInRight 1.00s 0s ease 1 forwards; }
+
+@-webkit-keyframes FlyInRight {
+  0% {
+    opacity: 0;
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    left: 100%;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); }
+  50% {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    left: 30%;
+    -webkit-transform: scale(0.25, 0.25);
+            transform: scale(0.25, 0.25); }
+  75% {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    left: 5%;
+    -webkit-transform: scale(0.25, 0.25);
+            transform: scale(0.25, 0.25); }
+  100% {
+    left: 0%; } }
+
+@keyframes FlyInRight {
+  0% {
+    opacity: 0;
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    left: 100%;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); }
+  50% {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    left: 30%;
+    -webkit-transform: scale(0.25, 0.25);
+            transform: scale(0.25, 0.25); }
+  75% {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    left: 5%;
+    -webkit-transform: scale(0.25, 0.25);
+            transform: scale(0.25, 0.25); }
+  100% {
+    left: 0%; } }
+.flyOutRight {
+  position: absolute;
+  top: 74.5px;
+  -webkit-animation: FlyOutRight 1.00s 0s ease 1 forwards;
+          animation: FlyOutRight 1.00s 0s ease 1 forwards; }
+
+@-webkit-keyframes FlyOutRight {
+  0% {
+    opacity: 1;
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    left: 0%;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); }
+  50% {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    left: 5%;
+    -webkit-transform: scale(0.25, 0.25);
+            transform: scale(0.25, 0.25); }
+  75% {
+    left: 30%;
+    -webkit-transform: scale(0.25, 0.25);
+            transform: scale(0.25, 0.25); }
+  100% {
+    left: 120%;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); } }
+
+@keyframes FlyOutRight {
+  0% {
+    opacity: 1;
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    left: 0%;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); }
+  50% {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    left: 5%;
+    -webkit-transform: scale(0.25, 0.25);
+            transform: scale(0.25, 0.25); }
+  75% {
+    left: 30%;
+    -webkit-transform: scale(0.25, 0.25);
+            transform: scale(0.25, 0.25); }
+  100% {
+    left: 120%;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); } }
+.flyAcrossToRight {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 74.5px;
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+  -webkit-transform: scale(0.25, 0.25);
+          transform: scale(0.25, 0.25);
+  -webkit-animation: FlyAcrossToRight .75s 0s ease 1 forwards;
+          animation: FlyAcrossToRight .75s 0s ease 1 forwards; }
+
+@-webkit-keyframes FlyAcrossToRight {
+  0% {
+    left: -100%; }
+  100% {
+    left: 100%; } }
+
+@keyframes FlyAcrossToRight {
+  0% {
+    left: -100%; }
+  100% {
+    left: 100%; } }
+.flyAcrossToLeft {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 74.5px;
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+  -webkit-transform: scale(0.25, 0.25);
+          transform: scale(0.25, 0.25);
+  -webkit-animation: FlyAcrossToLeft .75s 0s ease 1 forwards;
+          animation: FlyAcrossToLeft .75s 0s ease 1 forwards; }
+
+@-webkit-keyframes FlyAcrossToLeft {
+  0% {
+    left: 100%; }
+  100% {
+    left: -100%; } }
+
+@keyframes FlyAcrossToLeft {
+  0% {
+    left: 100%; }
+  100% {
+    left: -100%; } }
+
+/*# sourceMappingURL=styles.css.map */
