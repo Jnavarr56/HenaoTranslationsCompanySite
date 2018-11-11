@@ -147,34 +147,28 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
                         
                     }
 
-                    let mult = oldSelectedIndex < newSelectedIndex ? 1 : -1, sectionIter = oldSelectedIndex;
-                    let classToAdd;
+                    let mult = oldSelectedIndex < newSelectedIndex ? 1 : -1, sectionIter = oldSelectedIndex + ( 1 * mult );
+                    let classToAdd, time = 500;
+
+                    if ( Math.abs( newSelectedIndex - oldSelectedIndex ) === 1 ) {
+
+                        time = 0;
+                    }
+
+                    classToAdd = newSelectedIndex < oldSelectedIndex ? 'flyOutLeft' : 'flyOutRight';
+                    currentlySelected.addClass( classToAdd );
+                    setTimeout( function() {
+
+                        currentlySelected.removeClass( 'currentlySelected' );
+                        currentlySelected.removeClass( classToAdd );
+                    }, 1500 );
+                    
                     setTimeout( function() {
                         //-------------------------------------------------------------------------------------
 
                         let cycleThrough = setInterval( function() {
 
-                            if ( sectionIter === oldSelectedIndex ) {
-
-                                classToAdd = newSelectedIndex < oldSelectedIndex ? 'flyOutLeft' : 'flyOutRight';
-                                (function () {
-                                    let tempSecIter = sectionIter;
-                                    
-                                    
-
-                                    setTimeout( function() {
-
-                                        $( '.contentSection' ).eq( tempSecIter ).removeClass( 'currentlySelected' );
-                                    }, 1500 );
-
-                                })();
-
-
-
-
-                            }
-
-                            else if ( sectionIter === newSelectedIndex ) {
+                            if ( sectionIter === newSelectedIndex ) {
                                 classToAdd = newSelectedIndex < oldSelectedIndex ?  'flyInRight' : 'flyInLeft';
                                 classToAdd = classToAdd + ' currentlySelected';
                             }
@@ -208,50 +202,15 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
                                 console.log('--');
                             })();
                             
-                            
-
-
                             sectionIter += ( 1 * mult );
                             
                             if ( sectionIter === ( newSelectedIndex  + ( 1 * mult ) ) ) {
                                 console.log('');
                                 clearInterval( cycleThrough );
                             }
-                        }, 1500 );
-                        //-------------------------------------------------------------------------------------
-
-                        /*if ( newSelectedIndex < oldSelectedIndex ) {
-                        
-                            
-                            currentlySelected.addClass( 'flyOutRight' );
-                            $( mappedSectionID ).addClass( 'flyInLeft' );
-                            
-                        }
-    
-                        else {
-                            
-                            currentlySelected.addClass( 'flyOutLeft' );
-                            $( mappedSectionID ).addClass( 'flyInRight' );
-                        }
+                        }, 500 );
                     
-                        $( mappedSectionID ).addClass( 'currentlySelected' );
-
-                        setTimeout( function() {
-
-                            currentlySelected.removeClass( 'flyOutLeft' );
-                            currentlySelected.removeClass( 'flyOutRight' );
-    
-                            $( mappedSectionID ).removeClass( 'flyInRight' );
-                            $( mappedSectionID ).removeClass( 'flyInLeft' );
-    
-                            currentlySelected.removeClass( 'currentlySelected' ); 
-                            currentlySelected = $( '.currentlySelected' ).eq( 0 ); 
-    
-                        }, 1500); */
-
-                    
-                        
-                    }, 200 );
+                    }, 200 + time );
 
                 }
 
