@@ -204,7 +204,7 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
                             console.log('--');
                         })();
 
-                    }, 200 );
+                    }, 250 );
 
 
 
@@ -273,7 +273,7 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
                             }
                         }, time );
                     
-                    }, 200 + time );
+                    }, 250 + time );
 
                 }
 
