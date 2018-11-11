@@ -1,4 +1,3 @@
-
 $( document ).ready( function() {
 
     //Set section switching event listeners.
@@ -156,7 +155,7 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
                         $( this ).css( 
                             { 
                                 color: 'grey',
-                                opacity: '0.5'
+                                opacity: '0.35'
                             } 
                         );
                     }); 
