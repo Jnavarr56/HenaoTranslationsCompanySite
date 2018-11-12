@@ -328,7 +328,7 @@ function addContactTitleWrite() {
     
     setTimeout( function() {
 
-        let phrase = 'Get    in    touch.', lettCount = 0, isSpace = false;
+        let phrase = 'Get        in        touch.', lettCount = 0, isSpace = false;
 
         let writeGIT = setInterval( function() {
 
@@ -359,5 +359,5 @@ function addContactTitleWrite() {
 
 
 
-    }, 500 );
+    }, 750 );
 }
