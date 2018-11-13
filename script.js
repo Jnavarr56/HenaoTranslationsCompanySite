@@ -1,4 +1,6 @@
 $( document ).ready( function() {
+    //ALL
+    setProperHeight();
 
     //Set section switching event listeners.
     setFadeSectionSwitch( '.sectionSelector', '.contentSection' );
@@ -7,16 +9,22 @@ $( document ).ready( function() {
     countUpEffLP( '#years-experience', 0, 20, 500, 3000, 1.35 );
 
     
-    
-
-
+    //CONTACT PAGE --------- 4
     addHoverColorContact();
+    //---/CONTACT PAGE ----- 4
+
+
+
     $( window ).resize( function() {
-        resizeForm();
+        //ALL
+        setProperHeight();
+
+        //FIND A WAY TO FILTER THIS;
+        //CONTACT PAGE - 4
+        resizeContactPage();
     } );
         
 
-    
 
 } );
 
@@ -66,7 +74,7 @@ function countUpEffLP( targetID, startVal, EndVal, delay, duration, durationMult
 
                     setTimeout( function() {
 
-                        $( '#landing-text-primary' ).html( 'Gladys Henao, M.A. Legal Translator' );
+                        $( '#landing-text-primary' ).html( 'Gladys <span class = "hideBreak"><br></span>Henao,<span class = "hideBreak"><br></span> M.A. <span class = "hideBreak"><br></span>Legal <span class = "hideBreak"><br></span>Translator' );
 
                         setTimeout( function() {
 
@@ -199,6 +207,8 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
                             if ( sectionIter === newSelectedIndex ) {
                                 classToAdd = newSelectedIndex < oldSelectedIndex ?  'flyInRight' : 'flyInLeft';
                                 classToAdd = classToAdd + ' currentlySelected';
+
+                                
                             }
 
                             else {
@@ -232,19 +242,10 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
                                         });
                                     }
 
-                                    //Right before contact section loads.
+                                    //IF LOADING CONTACT PAGE
                                     if ( tempSecIter === 4 ) {
 
-                                        resizeForm();
-
-                                        addContactTitleWrite();
-
-                                        
-
-
-
-
-
+                                        resizeContactPage();
                                     }
                                     //-------------------------------------/contact
 
@@ -293,7 +294,7 @@ function resizeForm() {
     $( '.sizeForm' ).each( function() {
         totPx += $( this ).outerHeight();
     } );
-    console.log( totPx );
+
     $( '#nmForm' ).css( 
         {
             height: `${ totPx }px`,
@@ -320,6 +321,7 @@ function addHoverColorContact() {
     } );
 }
 
+<<<<<<< HEAD
 
 function addContactTitleWrite() {
 
@@ -360,4 +362,68 @@ function addContactTitleWrite() {
 
 
     }, 750 );
+=======
+function setProperHeight() {
+
+    $( 'body' ).css( 'max-height',  $( window ).innerHeight()  + 'px' );
+    $( document ).css( 'max-height',  $( window ).innerHeight() + 'px' );
+}
+
+function resizeContactPage() {
+
+    resizeForm();
+
+    let spaceTaken = 0, contactHeight = $( '#ccontact').height();
+    console.log( contactHeight );
+    $( '.contactRow' ).each( function( i ) {
+
+
+        let minH = $( this ).children( 0 ).children( 0 ).outerHeight();
+        
+
+        if ( i ===  ( $( '.contactRow' ).length - 1 ) )  {
+            //console.log( spaceLeft / contactHeight );
+            console.log(spaceTaken / contactHeight);
+            if ( ( spaceTaken / contactHeight ) <= .51 ) {
+                console.log( '1' );
+                
+                let formTopPadding = .50 - ( spaceTaken / contactHeight );
+                $( this ).css( 'min-height', ( 1 * $( '#ccontact').outerHeight() ) + 'px' );
+                $( this ).css( 'padding', `${ formTopPadding * 100 }% ${ formTopPadding * 100 }%  0%  ${ formTopPadding * 100 }%` );
+                $( '.contactRow' ).eq( i - 1 ).css( 'margin-top' , `${ formTopPadding * 50 }%`);    
+            }
+            
+        
+            else if ( ( spaceTaken / contactHeight ) > .51 && ( spaceTaken / contactHeight ) <=  1 &&  $( window ).innerWidth() <= 767 )  {                
+                console.log( '2' );
+                let spaceLeft = ( 1 - ( spaceTaken / contactHeight )) * .50;
+
+                let newParPercent = ( $( '.contactRow' ).eq( i - 2 ).outerHeight() / contactHeight ) + spaceLeft;
+                let newConPercent = ( $( '.contactRow' ).eq( i - 1  ).outerHeight() / contactHeight ) + spaceLeft;
+
+                //$( '.contactRow' ).eq( i - 1 ).css( 'min-height' , `${ newPer * contactHeight }px`);
+
+                $( '.contactRow' ).eq( i - 1 ).css( 'min-height', ( newConPercent * contactHeight ) + 'px' );
+                $( '.contactRow' ).eq( i - 2 ).css( 'min-height', ( newParPercent * contactHeight ) + 'px' );
+                
+                $( this ).css( 'min-height', ( 2 * $( '#ccontact').outerHeight() ) + 'px' );
+             
+            }
+
+            else {
+                console.log( '3' );
+                $( this ).css( 'min-height', ( 2 * $( '#ccontact').outerHeight() ) + 'px' );
+                $( this ).css( 'padding', '0px' );
+            }
+            
+        }
+        else {
+            
+            $( this ).css( 'min-height', minH + 'px' );
+            spaceTaken += minH;
+        }
+
+    } );
+
+>>>>>>> AddContactContent
 }

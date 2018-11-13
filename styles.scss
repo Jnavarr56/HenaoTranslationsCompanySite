@@ -122,12 +122,14 @@ footer {
     }
 }
 #navHolder {
+    z-index: 1000;
+
     height: $nav-height-arbit;
     
     background-color: rgba(255, 255, 255, 1);
     #mainNav {    
         height: $nav-height-arbit;
-        
+        z-index: 1000;
         padding: 0;  
         width: 0%;
         overflow: hidden;
@@ -258,6 +260,7 @@ nav.stroke ul li a.selectedLink:after {
 /////////////////////////////////
 .noneHome {
     position: relative;
+    //height: auto;
     height: calc( 100% - 147.3438px );
 
     display: flex;
@@ -376,14 +379,14 @@ nav.stroke ul li a.selectedLink:after {
 #ccontact {
     //overflow: scroll;
     justify-content: center;
+
     .row {
         height: 25%;
-        width: 100%;
         .col { text-align: initial; }
     }
     .row:nth-of-type(1) {//ROW 1
         height: 15%;
-        
+        width: 100%;
         overflow: visible;
         display: flex;
         justify-content: space-evenly;
@@ -421,18 +424,20 @@ nav.stroke ul li a.selectedLink:after {
         }   
     }
     .row:nth-of-type(2) {//ROW 2
-        //height: 30%;
         height: auto;
 
         div:nth-of-type(1) {//COL 1
             height: auto;
             display: flex;
             justify-content: flex-end;
-            align-items: flex-start;
+            align-items: center;
             padding: 0% 0% 0% 15%;
             p {                
                 font-family: $primary-font;
                 color: black;
+                em {
+                    display: none;
+                }
             }
         }
         div:nth-of-type(2) {//COL2
@@ -468,6 +473,7 @@ nav.stroke ul li a.selectedLink:after {
     }
     .row:nth-of-type(3) {//ROW 3 AND ROW 4
         height: auto;
+        width: 100%;
         div:nth-of-type(1) {//COL 1
             display: flex;
             justify-content: flex-start;
@@ -478,8 +484,8 @@ nav.stroke ul li a.selectedLink:after {
                 position: relative;
                 top: 5%;
                 right: 10%;
-                margin: 5% 0 0 0;
-                padding: 0;
+                margin: 0;
+                padding: 5% 0 0 0;
                 li {
                     margin: 0% 0 15% 0;
                     list-style-type: none;
@@ -511,33 +517,17 @@ nav.stroke ul li a.selectedLink:after {
 
     //-CONTACT SECTION-------------------------------------------------------------
     #ccontact { 
-        overflow-y: scroll;
-
-        
-        &::-webkit-scrollbar              {
-
-            
-            width: .50rem;
-
-            position: relative;
-            left: 5px;
-        }
-        &::-webkit-scrollbar-button       { /* 2 */ }
-        &::-webkit-scrollbar-track-piece  {
-
-            background-color: rgba(0, 0, 0, .5);
-        }
-        &::-webkit-scrollbar-thumb        {
-
-            background-color: rgba(255, 255, 255, 1);
-            border-style: solid;
-            border-color: rgba(0, 0, 0, .8); 
-        }
-        &::-webkit-scrollbar-corner       { /* 6 */ }
-        
+        overflow: scroll;
+        justify-content: flex-start;
         //ROW 1 ------------------------------------------
+        .row {
+            display: grid;
+        }
         .row:nth-of-type(1) {
+            height: auto;
+            //min-height: 52.3438px;
             div:nth-of-type(1) { 
+                height: auto;
                 justify-content: center; 
                 padding: 0;
                 h1 {
@@ -549,18 +539,32 @@ nav.stroke ul li a.selectedLink:after {
         }
         //ROW 2 ------------------------------------------
         .row:nth-of-type(2) {
-            //height: 87.5%;
+            height: auto;
+            overflow: visible;
+            //min-height: 247px;
             div:nth-of-type(1) {
                 padding: 0 10%;
-                p { font-size: 80%;}
+                height: auto;
+                //align-items: center;
+                
+                p { 
+                    font-size: 80%; 
+                    padding: 0; 
+                    em {
+                        display: initial;
+                    } 
+                }
             }
             div:nth-of-type(2) { display: none !important; }
         }
 
         //ROW 3 ------------------------------------------
         .row:nth-of-type(3) {
+            //min-height: 126.969px;
             div:nth-of-type(1) { 
+                height: auto;
                 justify-content: center;
+                align-items: flex-start;
                 padding: 0;
                 font-size: 80%; 
             }
@@ -568,20 +572,17 @@ nav.stroke ul li a.selectedLink:after {
         }
         //LAST ROW
         .row:last-of-type { 
-            display: flex !important;
-            height: auto;
-            position: absolute;
-            top: 100%;
             height: 100%;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            width: 100%;
+            //max-height: 792.64px;
+            display: grid !important;
+            //justify-content: center;
+            //align-items: center;
             padding: 0;
             margin: 0;
             div {
                 height: 100%;
                 width: 100%;
-
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -589,10 +590,28 @@ nav.stroke ul li a.selectedLink:after {
                 form {  
                     height: 100%;
                     width: 100%;
+                    max-width: 608px;
                     display: flex;
                     flex-direction: column;
-                    justify-content: space-evenly;
+                    justify-content: space-between;
                     align-items: center;
+                    div {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-evenly;
+                        align-items: center;
+
+                        height: 50%;
+                        
+                        width: 100%;
+
+                        margin: 0;
+
+                        input { height: 20%; max-height: 63px;}
+                        textarea { height: 40%; }
+                        button { height: 10%; padding-bottom: 8px; }
+                    }
+                    iframe { height: 50%; width: 100%; }   
                 }
             }
         } 
@@ -609,6 +628,18 @@ nav.stroke ul li a.selectedLink:after {
     color: blue !important;
 }
 .hc {
-
     display: inline;
+}
+.hideBreak {
+
+    display: none;
+}
+
+@media (max-width: 900px) {
+
+    .hideBreak {
+
+        display: initial;
+    }
+   
 }
