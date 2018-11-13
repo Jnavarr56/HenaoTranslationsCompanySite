@@ -243,9 +243,9 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
                                     }
 
                                     //IF LOADING CONTACT PAGE
-                                    if ( tempSecIter === 4 ) {
-
+                                    if ( tempSecIter === 5 ) {
                                         resizeContactPage();
+                                        
                                     }
                                     //-------------------------------------/contact
 
@@ -291,16 +291,7 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
 //Resize the form
 function resizeForm() {
     var totPx = 0;
-    $( '.sizeForm' ).each( function() {
-        totPx += $( this ).outerHeight();
-    } );
-
-    $( '#nmForm' ).css( 
-        {
-            height: `${ totPx }px`,
-            top: `${ - ( totPx / 6 ) }px`,
-        } 
-    );
+    console.log( $( '#nmForm' ).parent().css( 'height' ) );
 } 
 
 
@@ -329,17 +320,15 @@ function setProperHeight() {
 
 function resizeContactPage() {
 
-    resizeForm();
 
-    let spaceTaken = 0, contactHeight = $( '#ccontact').height();
-    console.log( contactHeight );
+    let spaceTaken = 0, contactHeight = $( '#ccontact').height(), formHeight = 0;
     $( '.contactRow' ).each( function( i ) {
 
 
         let minH = $( this ).children( 0 ).children( 0 ).outerHeight();
         
 
-        if ( i ===  ( $( '.contactRow' ).length - 1 ) )  {
+        if ( i ===  ( $( '.contactRow' ).length - 1 ) && $( this ).css( 'display' ) !== 'none' )  {
             //console.log( spaceLeft / contactHeight );
             console.log(spaceTaken / contactHeight);
             if ( ( spaceTaken / contactHeight ) <= .51 ) {
@@ -348,7 +337,7 @@ function resizeContactPage() {
                 let formTopPadding = .50 - ( spaceTaken / contactHeight );
                 $( this ).css( 'min-height', ( 1 * $( '#ccontact').outerHeight() ) + 'px' );
                 $( this ).css( 'padding', `${ formTopPadding * 100 }% ${ formTopPadding * 100 }%  0%  ${ formTopPadding * 100 }%` );
-                $( '.contactRow' ).eq( i - 1 ).css( 'margin-top' , `${ formTopPadding * 50 }%`);    
+                //$( '.contactRow' ).eq( i - 1 ).css( 'margin-top' , `${ formTopPadding * 50 }%`);    
             }
             
         
@@ -373,14 +362,36 @@ function resizeContactPage() {
                 $( this ).css( 'min-height', ( 2 * $( '#ccontact').outerHeight() ) + 'px' );
                 $( this ).css( 'padding', '0px' );
             }
+
+            
             
         }
         else {
             
             $( this ).css( 'min-height', minH + 'px' );
             spaceTaken += minH;
+
+
+            if ( $( this ).css( 'display' ) !== 'none' ) {
+
+                formHeight += minH;
+
+            }
+
         }
 
+
     } );
+
+    if ( formHeight !== 0 ) {
+
+        $( '#nmForm' ).css( 
+            {
+                height: formHeight + 'px',
+                top: - ( formHeight / 6 )+ 'px'
+            }
+        );
+
+    }
 
 }
