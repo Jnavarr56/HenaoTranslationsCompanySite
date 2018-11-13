@@ -244,8 +244,7 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
 
                                     //IF LOADING CONTACT PAGE
                                     if ( tempSecIter === 5 ) {
-                                        resizeContactPage();
-                                        
+                                        resizeContactPage();         
                                     }
                                     //-------------------------------------/contact
 
@@ -387,11 +386,17 @@ function resizeContactPage() {
 
         $( '#nmForm' ).css( 
             {
-                height: formHeight + 'px',
-                top: - ( formHeight / 6 )+ 'px'
+                height: ( 1.05 * formHeight ) + 'px',
+                top: - ( formHeight / 5 )+ 'px'
             }
         );
+        
+        $( '#nmForm' ).removeClass( 'growMap' );
+        $( '#nmForm' ).addClass( 'growMap' );
 
+        setTimeout( function() {
+            $( '#nmForm' ).removeClass( 'growMap' );
+        }, 500 ); 
     }
 
 }

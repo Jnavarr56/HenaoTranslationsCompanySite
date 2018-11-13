@@ -691,7 +691,8 @@ nav.stroke ul li a.selectedLink:after {
         padding: 0 0 0 7.5%;
         margin: 0;
         width: 70%;
-        height: 500%;
+        height: 0;
+        overflow: hidden;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -711,6 +712,21 @@ nav.stroke ul li a.selectedLink:after {
           font-family: "Poppins", Arial, Helvetica, sans-serif !important; }
         #ccontact .row:nth-of-type(2) div:nth-of-type(2) form iframe {
           max-height: 296.172px; }
+    #ccontact .row:nth-of-type(2) .growMap {
+      -webkit-animation: GrowMap .50s 0s ease-in-out 1 forwards;
+              animation: GrowMap .50s 0s ease-in-out 1 forwards; }
+@-webkit-keyframes GrowMap {
+  0% {
+    height: 0%;
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes GrowMap {
+  0% {
+    height: 0%;
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
   #ccontact .row:nth-of-type(3) {
     height: auto;
     width: 100%; }
