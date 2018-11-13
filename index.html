@@ -58,7 +58,7 @@
         <div class = "row">
             <div class="col">
                 <h2 class="landing-text" id="landing-text-primary">
-                    Over <span id="years-experience">0</span> Years of Spanish Translation Experience.
+                    Over <span id="years-experience">0</span><span class = "hideBreak"><br></span>Years<span class = "hideBreak"><br></span> of Spanish<span class = "hideBreak"><br></span>Translation<span class = "hideBreak"><br></span>Experience.
                 </h2>
             </div>
         </div>
@@ -112,20 +112,20 @@
     <!--------------CONTACT SECTION------------>
     <!----------------------------------------->
     <div id = "ccontact" class="container-fluid noneHome contentSection">
-        <div class = "row sizeForm">
+        <div class = "row sizeForm contactRow">
             <div class="col-xs-12 col-md-6"><h1>Get in Touch.</h1></div>
-            <div id="nonMobileForm" class="col-md-6">
-            </div>
+            <div id="nonMobileForm" class="col-md-6"></div>
         </div>
-        <div class = "row sizeForm">
+        <div class = "row sizeForm contactRow">
             <div class="col-xs-12 col-md-6">
                 <p>
                     Feel free to contact me regarding work, general inquries, or anything else. 
                     I can be reached by phone and email. You can also send me an SMS or a message here.
                     <br>
                     <br>
-                    Make sure to preface your message with your name and reason for reaching out.
-                    For interational clients, or those located outside of the northeastern US, 
+                    <em style = 'font-weight: bold;'>Scroll down this page for more information.</em>
+                    Make sure to state your name and reason for reaching out.
+                    For those located outside of the northeastern US, 
                     please be advised that I am located in the greater New York City area. I accept
                     document related work internationally and in-person interpreter assignments locally.
                 </p>
@@ -139,10 +139,11 @@
                     <iframe width="100%" height="40%" frameborder="0" style="border:0"
                         src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBeUSVRKd9QUCCEREzl_3u_IMOs0td6Uwo&q=Salisbury, NY&zoom=12">
                     </iframe>
+                    
                 </form>
             </div>
         </div>
-        <div class = "row sizeForm">
+        <div class = "row sizeForm contactRow">
             <div class="col-xs-12 col-md-6">
                 <ul>
                     <li><i class="hc fa fa-mobile-alt fa-2x"></i><p class="hc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+1 917.683.0901</p></li>
@@ -151,13 +152,15 @@
             </div>
             <div class="col-md-6"></div>
         </div>
-        <div id="mobileForm" class = "row">
+        <div id="mobileForm" class = "row contactRow">
             <div class="col-xs-12">
                 <form action="https://formspree.io/jnavarr56@gmail.com" method="POST">
-                    <input type="text" name="subject" class="form-control" placeholder="Subject">
-                    <input type="email" name="email" placeholder="Your name email" class="form-control">
-                    <textarea name="message" placeholder="Write me a message" class="form-control"></textarea>
-                    <button type="submit" class="form-control btn btn-dark">Send</button>
+                    <div class ="form-group">
+                        <input type="text" name="subject" class="form-control" placeholder="Subject">
+                        <input type="email" name="email" placeholder="Your name or email" class="form-control">
+                        <textarea name="message" placeholder="Write me a message" class="form-control"></textarea>
+                        <button type="submit" class="form-control btn btn-dark">Send</button>
+                    </div>
                     <iframe width="100%" height="40%" frameborder="0" style="border:0"
                         src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBeUSVRKd9QUCCEREzl_3u_IMOs0td6Uwo&q=Salisbury, NY&zoom=12">
                     </iframe>
