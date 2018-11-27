@@ -26,6 +26,14 @@ $( document ).ready( function() {
         
 
 
+    $( '.refSp' ).each( function() {
+        console.log( $( this ).attr( 'data-refsp' ) );
+        let clickIDRef = $( this ).attr( 'data-refsp' );
+        $( this ).click( function() {
+            $( '#' +clickIDRef ).click()
+        } );
+    } );
+
 } );
 
 
@@ -181,7 +189,7 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
                         time = 0;
                     }
 
-                    classToAdd = newSelectedIndex < oldSelectedIndex ? 'flyOutLeft' : 'flyOutRight';
+                    classToAdd = newSelectedIndex > oldSelectedIndex ? 'flyOutLeft' : 'flyOutRight';
                     
                     setTimeout( function() {
 
@@ -210,14 +218,14 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
                         let cycleThrough = setInterval( function() {
 
                             if ( sectionIter === newSelectedIndex ) {
-                                classToAdd = newSelectedIndex < oldSelectedIndex ?  'flyInRight' : 'flyInLeft';
+                                classToAdd = newSelectedIndex > oldSelectedIndex ?  'flyInRight' : 'flyInLeft';
                                 classToAdd = classToAdd + ' currentlySelected';
 
                                 
                             }
 
                             else {
-                                classToAdd = newSelectedIndex < oldSelectedIndex ? 'flyAcrossToLeft' : 'flyAcrossToRight';
+                                classToAdd = newSelectedIndex > oldSelectedIndex ? 'flyAcrossToLeft' : 'flyAcrossToRight';
                             }
                             
 
