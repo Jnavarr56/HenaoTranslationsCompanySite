@@ -6,7 +6,7 @@ $( document ).ready( function() {
     setFadeSectionSwitch( '.sectionSelector', '.contentSection' );
     
     //On load effects.
-    countUpEffLP( '#years-experience', 0, 20, 500, 3000, 1.35 );
+    countUpEffLP( '#years-experience', 0, 20, 400, 3000, .85 );
 
     
     //CONTACT PAGE --------- 4
@@ -124,11 +124,16 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
         
         $( this ).click( function() {
             
+            
+
             if ( !activeLinks ) {
 
                 return;
             }
             
+            //clearHeaders( 'clearHeaders' );
+
+
             $( triggersClass ).each( function( i ) {
 
 
@@ -244,7 +249,12 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
 
                                     //IF LOADING CONTACT PAGE
                                     if ( tempSecIter === 5 ) {
-                                        resizeContactPage();         
+                                         
+                                        
+                                        //writeHeader( 'gIT', 'Get in touch.', 75, 4, 250 );
+
+                                        //setTimeout( resizeContactPage(), 75 );
+                                        //resizeContactPage();  
                                     }
                                     //-------------------------------------/contact
 
@@ -290,7 +300,7 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
 //Resize the form
 function resizeForm() {
     var totPx = 0;
-    console.log( $( '#nmForm' ).parent().css( 'height' ) );
+
 } 
 
 
@@ -320,19 +330,19 @@ function setProperHeight() {
 function resizeContactPage() {
 
 
-    let spaceTaken = 0, contactHeight = $( '#ccontact').height(), formHeight = 0;
+    let spaceTaken = 0, contactHeight = $( '#ccontact').height(), formHeight = 0, heights = [];
     $( '.contactRow' ).each( function( i ) {
 
 
         let minH = $( this ).children( 0 ).children( 0 ).outerHeight();
         
+        console.log( i + ' ' + minH );
 
         if ( i ===  ( $( '.contactRow' ).length - 1 ) && $( this ).css( 'display' ) !== 'none' )  {
             //console.log( spaceLeft / contactHeight );
-            console.log(spaceTaken / contactHeight);
+            
             if ( ( spaceTaken / contactHeight ) <= .51 ) {
-                console.log( '1' );
-                
+                console.log( '---1---' );
                 let formTopPadding = .50 - ( spaceTaken / contactHeight );
                 $( this ).css( 'min-height', ( 1 * $( '#ccontact').outerHeight() ) + 'px' );
                 $( this ).css( 'padding', `${ formTopPadding * 100 }% ${ formTopPadding * 100 }%  0%  ${ formTopPadding * 100 }%` );
@@ -341,11 +351,11 @@ function resizeContactPage() {
             
         
             else if ( ( spaceTaken / contactHeight ) > .51 && ( spaceTaken / contactHeight ) <=  1 &&  $( window ).innerWidth() <= 767 )  {                
-                console.log( '2' );
+                console.log( '---2---' );
                 let spaceLeft = ( 1 - ( spaceTaken / contactHeight )) * .50;
 
                 let newParPercent = ( $( '.contactRow' ).eq( i - 2 ).outerHeight() / contactHeight ) + spaceLeft;
-                let newConPercent = ( $( '.contactRow' ).eq( i - 1  ).outerHeight() / contactHeight ) + spaceLeft;
+                let newConPercent = ( $( '.contactRow' ).eq( i - 1 ).outerHeight() / contactHeight ) + spaceLeft;
 
                 //$( '.contactRow' ).eq( i - 1 ).css( 'min-height' , `${ newPer * contactHeight }px`);
 
@@ -353,11 +363,12 @@ function resizeContactPage() {
                 $( '.contactRow' ).eq( i - 2 ).css( 'min-height', ( newParPercent * contactHeight ) + 'px' );
                 
                 $( this ).css( 'min-height', ( 2 * $( '#ccontact').outerHeight() ) + 'px' );
-             
+                console.log( i - 2 );
+                console.log( i - 1 );
             }
 
             else {
-                console.log( '3' );
+                console.log( '---3---' );
                 $( this ).css( 'min-height', ( 2 * $( '#ccontact').outerHeight() ) + 'px' );
                 $( this ).css( 'padding', '0px' );
             }
@@ -375,19 +386,22 @@ function resizeContactPage() {
 
                 formHeight += minH;
 
+                heights.push( minH );
+
             }
 
         }
 
 
     } );
-
+    console.log( heights );
+    console.log( formHeight );
     if ( formHeight !== 0 ) {
 
         $( '#nmForm' ).css( 
             {
-                height: ( 1.05 * formHeight ) + 'px',
-                top: - ( formHeight / 5 )+ 'px'
+                height: formHeight + 'px',
+                top: - heights[ 0 ] + 'px',
             }
         );
         
@@ -399,4 +413,33 @@ function resizeContactPage() {
         }, 500 ); 
     }
 
+}
+
+function writeHeader( targedID, phrase, characterDuration, spacesBetween, initialDelay ) {
+
+    let iter = 0;
+    $( '#' + targedID ).text( '' );
+    phrase = phrase.split( ' ' ).join( ' '.repeat( spacesBetween ) );
+
+    setTimeout( function() {
+
+        var writeEff = setInterval( function() {
+
+            $( '#' + targedID ).text( $( '#' + targedID ).text() + phrase[ iter ] );
+    
+            if ( $( '#' + targedID ).text() === phrase ) {
+    
+                clearInterval( writeEff );
+            }
+
+            iter ++;
+        }, characterDuration );
+
+
+    }, initialDelay );
+
+}
+ 
+function clearHeaders( clearClass ) {
+    $( '.' + clearClass ).each( function() { $( this ).text( '' );  console.log( $( this ) ) } );
 }

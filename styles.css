@@ -96,8 +96,8 @@ body {
         margin: 0;
         padding: 0; }
       .landing-main .row div .BlurIn {
-        -webkit-animation: BlurInPrimaryLandingText 3s 0s linear 1 forwards;
-                animation: BlurInPrimaryLandingText 3s 0s linear 1 forwards; }
+        -webkit-animation: BlurInPrimaryLandingText 4s 0s linear 1 forwards;
+                animation: BlurInPrimaryLandingText 4s 0s linear 1 forwards; }
 @-webkit-keyframes BlurInPrimaryLandingText {
   0% {
     opacity: 0;
@@ -683,7 +683,13 @@ nav.stroke ul li a.selectedLink:after {
       position: relative;
       display: -webkit-box;
       display: -ms-flexbox;
-      display: flex; }
+      display: flex;
+      -webkit-box-pack: start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
+      -webkit-box-align: start;
+          -ms-flex-align: start;
+              align-items: flex-start; }
       #ccontact .row:nth-of-type(2) div:nth-of-type(2) form {
         position: absolute;
         left: 0%;

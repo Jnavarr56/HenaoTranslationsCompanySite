@@ -2,7 +2,7 @@
 
 $primary-font: 'Poppins', Arial, Helvetica, sans-serif;
 $secondary-font: 'Raleway', Arial, Helvetica, sans-serif;
-$blurry-primary-text-animation-duration: 3s;
+$blurry-primary-text-animation-duration: 4s;
 $list-appear-animation-duration: .5s;
 
 $nav-height-arbit: 73.6719px;
@@ -435,6 +435,8 @@ nav.stroke ul li a.selectedLink:after {
         div:nth-of-type(2) {//COL2
             position: relative;
             display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
             form {
                 position: absolute;
                 left: 0%;
