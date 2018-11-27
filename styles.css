@@ -770,6 +770,16 @@ nav.stroke ul li a.selectedLink:after {
     #ccontact .row:last-of-type div {
       padding: 0; }
 
+#chireme .row {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  #chireme .row div h4 {
+    font-family: "Poppins", Arial, Helvetica, sans-serif; }
+
 @media (max-width: 767px) {
   #ccontact {
     overflow: scroll;
@@ -882,7 +892,12 @@ nav.stroke ul li a.selectedLink:after {
               padding-bottom: 8px; }
           #ccontact .row:last-of-type div form iframe {
             height: 50%;
-            width: 100%; } }
+            width: 100%; }
+
+  #chireme {
+    overflow: scroll; }
+    #chireme .row div h4 {
+      font-size: 95%; } }
 .hoverContact {
   color: blue !important; }
 
