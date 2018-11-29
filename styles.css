@@ -780,6 +780,55 @@ nav.stroke ul li a.selectedLink:after {
   #chireme .row div h4 {
     font-family: "Poppins", Arial, Helvetica, sans-serif; }
 
+#cabout .row {
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  #cabout .row div {
+    height: 100%;
+    overflow: scroll;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+    #cabout .row div h4 {
+      font-family: "Poppins", Arial, Helvetica, sans-serif;
+      font-size: 100%; }
+    #cabout .row div div {
+      background-color: black;
+      position: relative;
+      height: 50%;
+      width: 80%;
+      border-style: solid;
+      text-align: center; }
+      #cabout .row div div img {
+        height: 100%;
+        -webkit-transition: 0.5s opacity;
+        transition: 0.5s opacity; }
+      #cabout .row div div span {
+        position: absolute;
+        padding: 10px 0;
+        bottom: 0;
+        color: white;
+        font-family: "Poppins", Arial, Helvetica, sans-serif;
+        -webkit-transition: 0.5s padding;
+        transition: 0.5s padding;
+        background-color: rgba(0, 0, 0, 0.6);
+        width: 100%; }
+      #cabout .row div div:hover img {
+        opacity: 0.7; }
+      #cabout .row div div:hover span {
+        padding-bottom: 10%; }
+
 @media (max-width: 767px) {
   #ccontact {
     overflow: scroll;
