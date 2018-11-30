@@ -517,13 +517,13 @@ nav.stroke ul li a.selectedLink:after {
         align-items: center;
         div {
             height: 100%;
-            overflow: scroll;
+            overflow: visible;
             display: flex;
             align-items: center;
             justify-content: center;  
             h4 {font-family: $primary-font; font-size: 100%;} 
             div {
-                ;
+                overflow: hidden;
                 background-color: black;
                 position: relative;
                 height: 50%;
@@ -534,7 +534,7 @@ nav.stroke ul li a.selectedLink:after {
                     height: 100%;
                     transition: 0.5s opacity
                 }
-                span {
+                .imgcap {
                     position: absolute;
                     padding: 10px 0;
                     bottom: 0;
@@ -544,18 +544,36 @@ nav.stroke ul li a.selectedLink:after {
                     background-color: rgba(0, 0, 0, 0.6);
                     width: 100%;
                 }
-                &:hover {
-                    
+                .mobileimgcap {
+                    display: none;
+                    position: absolute;
+                    padding: 10px 0;
+                    top: 0;
+                    color: white;
+                    font-family: $primary-font;
+                    background-color: rgba(0, 0, 0, 0.6);
+                    width: 100%;
+                }
+                /*&:hover {    
                     img {
                         opacity: 0.7;
                     }
                     span {
                         padding-bottom: 10%;
                     }
-                }
+                }*/
             } 
         }
     }
+}
+@media (max-width: 1113px) {
+    #cabout { .row { div:nth-of-type(1) { 
+        align-items: center; 
+        overflow: scroll;
+        h4 {
+            font-size: 80%;
+        }
+    } } }
 }
 
 //When Small
@@ -592,7 +610,6 @@ nav.stroke ul li a.selectedLink:after {
                 padding: 0 10%;
                 height: auto;
                 //align-items: center;
-                
                 p { 
                     font-size: 80%; 
                     padding: 0; 
@@ -668,37 +685,46 @@ nav.stroke ul li a.selectedLink:after {
     #chireme {
         //justify-content: flex-start;
         overflow: scroll;
+        .row { div { h4 {font-size: 95%;} }}
+    }
+    //--/HIREME SECTION-------------------------------------------------------------
+
+    #cabout {
         .row {
-            div {
+            overflow: scroll;
+            div:nth-of-type(1) {
+                order: 2;
+                overflow: visible;
+                align-items: flex-start;
                 h4 {
-                    font-size: 95%; 
+                    font-size: 90%;
+                }
+            }
+            div:nth-of-type(2) {
+                order: 1;
+                div {
+                    overflow: hidden;
+                    .mobileimgcap { 
+                        display: initial; 
+                        padding: 5px 0;
+                    }
                 }
             }
         }
+        
     }
-    //--/HIREME SECTION-------------------------------------------------------------
+
+
 }
 //--------------------------------------
 //-------------------------------------------------------------------
 
  
-.hoverContact {
-
-    color: blue !important;
-}
-.hc {
-    display: inline;
-}
-.hideBreak {
-
-    display: none;
-}
+.hoverContact { color: blue !important; }
+.hc { display: inline; }
+.hideBreak { display: none; }
 
 @media (max-width: 900px) {
-
-    .hideBreak {
-
-        display: initial;
-    }
-   
+    .hideBreak { display: initial; }
 }
+

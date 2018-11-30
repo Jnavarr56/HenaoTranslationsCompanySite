@@ -790,7 +790,7 @@ nav.stroke ul li a.selectedLink:after {
           align-items: center; }
   #cabout .row div {
     height: 100%;
-    overflow: scroll;
+    overflow: visible;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -804,17 +804,26 @@ nav.stroke ul li a.selectedLink:after {
       font-family: "Poppins", Arial, Helvetica, sans-serif;
       font-size: 100%; }
     #cabout .row div div {
+      overflow: hidden;
       background-color: black;
       position: relative;
       height: 50%;
       width: 80%;
       border-style: solid;
-      text-align: center; }
+      text-align: center;
+      /*&:hover {    
+          img {
+              opacity: 0.7;
+          }
+          span {
+              padding-bottom: 10%;
+          }
+      }*/ }
       #cabout .row div div img {
         height: 100%;
         -webkit-transition: 0.5s opacity;
         transition: 0.5s opacity; }
-      #cabout .row div div span {
+      #cabout .row div div .imgcap {
         position: absolute;
         padding: 10px 0;
         bottom: 0;
@@ -824,11 +833,24 @@ nav.stroke ul li a.selectedLink:after {
         transition: 0.5s padding;
         background-color: rgba(0, 0, 0, 0.6);
         width: 100%; }
-      #cabout .row div div:hover img {
-        opacity: 0.7; }
-      #cabout .row div div:hover span {
-        padding-bottom: 10%; }
+      #cabout .row div div .mobileimgcap {
+        display: none;
+        position: absolute;
+        padding: 10px 0;
+        top: 0;
+        color: white;
+        font-family: "Poppins", Arial, Helvetica, sans-serif;
+        background-color: rgba(0, 0, 0, 0.6);
+        width: 100%; }
 
+@media (max-width: 1113px) {
+  #cabout .row div:nth-of-type(1) {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    overflow: scroll; }
+    #cabout .row div:nth-of-type(1) h4 {
+      font-size: 80%; } }
 @media (max-width: 767px) {
   #ccontact {
     overflow: scroll;
@@ -946,7 +968,29 @@ nav.stroke ul li a.selectedLink:after {
   #chireme {
     overflow: scroll; }
     #chireme .row div h4 {
-      font-size: 95%; } }
+      font-size: 95%; }
+
+  #cabout .row {
+    overflow: scroll; }
+    #cabout .row div:nth-of-type(1) {
+      -webkit-box-ordinal-group: 3;
+          -ms-flex-order: 2;
+              order: 2;
+      overflow: visible;
+      -webkit-box-align: start;
+          -ms-flex-align: start;
+              align-items: flex-start; }
+      #cabout .row div:nth-of-type(1) h4 {
+        font-size: 90%; }
+    #cabout .row div:nth-of-type(2) {
+      -webkit-box-ordinal-group: 2;
+          -ms-flex-order: 1;
+              order: 1; }
+      #cabout .row div:nth-of-type(2) div {
+        overflow: hidden; }
+        #cabout .row div:nth-of-type(2) div .mobileimgcap {
+          display: initial;
+          padding: 5px 0; } }
 .hoverContact {
   color: blue !important; }
 
