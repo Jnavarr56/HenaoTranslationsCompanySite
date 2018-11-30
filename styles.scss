@@ -554,18 +554,35 @@ nav.stroke ul li a.selectedLink:after {
                     background-color: rgba(0, 0, 0, 0.6);
                     width: 100%;
                 }
-                /*&:hover {    
-                    img {
-                        opacity: 0.7;
-                    }
-                    span {
-                        padding-bottom: 10%;
-                    }
-                }*/
             } 
         }
     }
 }
+#cservices {
+    .row {
+        width: 100%;
+        justify-content: center;
+        div {
+            font-family: $primary-font;
+            color: rgba(0, 0, 0, 1);
+        }
+    }
+    .row:nth-of-type(2) {
+        div {
+            padding: 0 0 0 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+
+
+
+
+
+
 @media (max-width: 1113px) {
     #cabout { .row { div:nth-of-type(1) { 
         align-items: center; 

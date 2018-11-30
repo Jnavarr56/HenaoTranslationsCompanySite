@@ -810,15 +810,7 @@ nav.stroke ul li a.selectedLink:after {
       height: 50%;
       width: 80%;
       border-style: solid;
-      text-align: center;
-      /*&:hover {    
-          img {
-              opacity: 0.7;
-          }
-          span {
-              padding-bottom: 10%;
-          }
-      }*/ }
+      text-align: center; }
       #cabout .row div div img {
         height: 100%;
         -webkit-transition: 0.5s opacity;
@@ -842,6 +834,26 @@ nav.stroke ul li a.selectedLink:after {
         font-family: "Poppins", Arial, Helvetica, sans-serif;
         background-color: rgba(0, 0, 0, 0.6);
         width: 100%; }
+
+#cservices .row {
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  #cservices .row div {
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+    color: black; }
+#cservices .row:nth-of-type(2) div {
+  padding: 0 0 0 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
 
 @media (max-width: 1113px) {
   #cabout .row div:nth-of-type(1) {
