@@ -262,7 +262,6 @@ function setFadeSectionSwitch( triggersClass, sectionsClass, selectedClass ) {
                                         //writeHeader( 'gIT', 'Get in touch.', 75, 4, 250 );
 
                                         setTimeout( resizeContactPage(), 750 );
-                                        //resizeContactPage();  
                                     }
                                     //-------------------------------------/contact
 
