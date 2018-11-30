@@ -810,6 +810,7 @@ nav.stroke ul li a.selectedLink:after {
       height: 50%;
       width: 80%;
       border-style: solid;
+      border-radius: 15px;
       text-align: center; }
       #cabout .row div div img {
         height: 100%;
@@ -868,6 +869,46 @@ nav.stroke ul li a.selectedLink:after {
               justify-content: center; }
       #cservices .row div:nth-of-type(2) h5 ul li {
         padding: 10px 0; }
+
+#ccv .row {
+  height: 90%;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  #ccv .row div {
+    height: 100%;
+    width: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+    #ccv .row div .resume-sec {
+      height: 33%;
+      width: 100%;
+      margin: 0;
+      position: relative; }
+      #ccv .row div .resume-sec h4 {
+        color: black;
+        color: white;
+        background-color: black;
+        font-family: "Poppins", Arial, Helvetica, sans-serif;
+        font-size: 130%;
+        position: absolute;
+        top: 0;
+        margin: 0;
+        letter-spacing: 3px;
+        padding: 10px;
+        border-radius: 15px; }
 
 @media (max-width: 1113px) {
   #cabout .row div:nth-of-type(1) {
