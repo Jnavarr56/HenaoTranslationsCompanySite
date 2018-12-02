@@ -878,7 +878,6 @@ nav.stroke ul li a.selectedLink:after {
           justify-content: center; }
   #ccv .row div {
     height: 100%;
-    width: 50%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -886,29 +885,35 @@ nav.stroke ul li a.selectedLink:after {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
-            justify-content: center; }
-    #ccv .row div .resume-sec {
-      height: 33%;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  #ccv .row div:nth-of-type(1) div {
+    height: 50%;
+    width: 100%; }
+    #ccv .row div:nth-of-type(1) div div {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
       width: 100%;
-      margin: 0;
-      position: relative; }
-      #ccv .row div .resume-sec h4 {
-        color: black;
-        color: white;
-        background-color: black;
-        font-family: "Poppins", Arial, Helvetica, sans-serif;
-        font-size: 130%;
-        position: absolute;
-        top: 0;
-        margin: 0;
-        letter-spacing: 3px;
-        padding: 10px;
-        border-radius: 15px; }
+      border-style: solid; }
+    #ccv .row div:nth-of-type(1) div div:nth-of-type(1) {
+      height: 30%; }
+    #ccv .row div:nth-of-type(1) div div:nth-of-type(2) {
+      height: 70%; }
 
 @media (max-width: 1113px) {
   #cabout .row div:nth-of-type(1) {

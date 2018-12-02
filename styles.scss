@@ -596,31 +596,34 @@ nav.stroke ul li a.selectedLink:after {
         justify-content: center;
         div {
             height: 100%;
-            width: 50%;
+            //width: 50%;
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
-            .resume-sec {
-                height: 33%;
+            align-items: center;
+        }
+        div:nth-of-type(1) {
+            div {
+                height: 50%;
                 width: 100%;
-                margin: 0;
-                position: relative;
-                h4 {
-                    color: rgba(0, 0, 0, 1);
-                    color: white;
-                    background-color: black;
-                    font-family: $primary-font;
-                    font-size: 130%;
-                    position: absolute;
-                    top: 0;
-                    margin: 0;
-                    letter-spacing: 3px;
-                    //border-bottom-style: solid;
-                    padding: 10px;
-                    border-radius: 15px;
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    border-style: solid;
+                }
+                div:nth-of-type(1) {
+                    height: 30%;
+                }
+                div:nth-of-type(2) {
+                    height: 70%;
                 }
             }
+        }
+        div:nth-of-type(2) {
+
         }
     }
 }
