@@ -870,6 +870,12 @@ nav.stroke ul li a.selectedLink:after {
       #cservices .row div:nth-of-type(2) h5 ul li {
         padding: 10px 0; }
 
+.resume-header {
+  padding: 5px 7.5px;
+  background-color: black;
+  color: white;
+  border-radius: 15px; }
+
 #ccv {
   overflow-y: scroll; }
   #ccv .row {
@@ -900,7 +906,7 @@ nav.stroke ul li a.selectedLink:after {
           -ms-flex-align: center;
               align-items: center; }
     #ccv .row div:nth-of-type(1) {
-      height: 50%; }
+      height: 80%; }
       #ccv .row div:nth-of-type(1) div {
         height: 50%;
         width: 100%; }
@@ -918,8 +924,7 @@ nav.stroke ul li a.selectedLink:after {
           -webkit-box-align: center;
               -ms-flex-align: center;
                   align-items: center;
-          width: 100%;
-          border-style: solid; }
+          width: 100%; }
           #ccv .row div:nth-of-type(1) div div ul {
             margin: 0;
             padding: 0;
@@ -939,10 +944,19 @@ nav.stroke ul li a.selectedLink:after {
               width: 100%; }
               #ccv .row div:nth-of-type(1) div div ul li p {
                 display: inline-block; }
+              #ccv .row div:nth-of-type(1) div div ul li p:nth-of-type(1) {
+                padding-right: 5px; }
         #ccv .row div:nth-of-type(1) div div:nth-of-type(1) {
-          height: 30%; }
+          height: 30%;
+          padding-top: 30px; }
         #ccv .row div:nth-of-type(1) div div:nth-of-type(2) {
           height: 70%; }
+
+.top-cv {
+  border-bottom-style: solid; }
+
+.bottom-cv {
+  border-top-style: solid; }
 
 @media (max-width: 1113px) {
   #cabout .row div:nth-of-type(1) {
@@ -1106,7 +1120,42 @@ nav.stroke ul li a.selectedLink:after {
     padding-bottom: 25%; }
   #cservices .row div:nth-of-type(2) {
     padding-top: 0%;
-    padding-bottom: 0%; } }
+    padding-bottom: 0%; }
+
+  #ccv {
+    overflow-y: scroll; }
+    #ccv .row {
+      height: 100%;
+      width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: start;
+          -ms-flex-align: start;
+              align-items: flex-start;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
+      #ccv .row div {
+        height: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center; }
+      #ccv .row div:nth-of-type(1) {
+        height: 100%; }
+        #ccv .row div:nth-of-type(1) .bottom-cv {
+          display: initial;
+          text-align: center; } }
 .hoverContact {
   color: blue !important; }
 
