@@ -614,6 +614,7 @@ nav.stroke ul li a.selectedLink:after {
         div:nth-of-type(1) {
             height: 80%;
             padding-right: 10px;
+
             div {
                 height: 50%;
                 width: 100%;
@@ -624,6 +625,7 @@ nav.stroke ul li a.selectedLink:after {
                     justify-content: center;
                     align-items: center;
                     width: 100%;
+                    
                     //border-style: solid;
                     ul { 
                         margin: 0;
@@ -654,6 +656,7 @@ nav.stroke ul li a.selectedLink:after {
         }
         div:nth-of-type(2) {
             border-left-style: solid;
+            border-width: 1px;
         }
     }
 }
